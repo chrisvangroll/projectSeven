@@ -14,13 +14,36 @@ exports.getAllPosts = (req, res, next)=>{
     db.query(sql, async (err, results)=> {
         try{
             const allPosts = res.send(results)
+            
         }catch{
             res.status(400).json({message: err});
         }
     })
 }
 
-exports.getPost = (req, res, next) => {
+exports.deletePost = (req, res, next) => {
+    const postId = req.params.id;
+    const sql =    `DELETE from uploads
+                    WHERE id = ?`
+    db.query(sql, [postId], (err, rows, fields)=> {
+        if(!err){
+            res.send('deleted again')
+            console.log('worked')
+        }
+        else{
+            console.log(err);
+        }
+    }
+    )}
+    //     try{
+    //         const deletePost =await res.send('deleted')
+    //     }catch{
+    //         res.status(400).json({message: err});
+    //     }
+    // })
+
+
+  exports.getPost = (req, res, next) => {
     const postId = req.params.id;
     const sql = `SELECT uploads.content, users.name, users.id
                  FROM uploads 
@@ -35,16 +58,16 @@ exports.getPost = (req, res, next) => {
     })
   }
 
-  exports.createPost = (req, res, next) => {
-    const sql = `INSERT INTO uploads (id, content, author)
-                VALUES (3, newGif, 2)`;
-    db.query(sql, async (err, results)=> {
-        try{
-            const post =await res.send(results)
-            console.log('hi')
-        }catch{
-            res.status(400).json({message: err});
-        }
-    })
-  }
+  
+//   exports.createPost = (req, res, next) => {
+//     const sql = `INSERT INTO uploads (id, content, author)
+//                 VALUES (3, newGif, 2)`;
+//     db.query(sql, async (err, results)=> {
+//         try{
+//             const post =await res.send(results)
+//         }catch{
+//             res.status(400).json({message: err});
+//         }
+//     })
+//   }
   

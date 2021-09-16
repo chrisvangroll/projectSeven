@@ -5,7 +5,7 @@ const forumCtrl = require('../controllers/forum');
 
 
 
-  router.post('/create', forumCtrl.createPost);
+  // router.post('/create', forumCtrl.createPost);
 
   router.get('/', forumCtrl.getAllPosts);
 
@@ -15,7 +15,7 @@ const forumCtrl = require('../controllers/forum');
 
   // router.put('/:id', forumCtrl.updatePost);
 
-  // router.delete('/:id', forumCtrl.deletePost);
+  router.delete('/:id', forumCtrl.deletePost);
 
 
 

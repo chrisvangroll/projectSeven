@@ -17,18 +17,15 @@ const db = mysql.createConnection({
 
 db.connect((err)=>{
     //err ? console.log(err) : console.log('connected to mysql DB');
-    if(err){throw err};
-    const sql = `INSERT INTO uploads (id, content, author)
-                VALUES (3, newGif, 2)`;
-    db.query(sql, async (err, results)=> {
-        try{
-            const post =await console.log(results)
-        }catch{
-            res.status(400).json({message: err});
-        }
+    if(err){
+        throw err;
+    }
+    else{
+        console.log('connected to DB')
+    }
+   
     })
 
-})
     
 //middleware
 app.use(cors());
