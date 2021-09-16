@@ -24,11 +24,10 @@ exports.getAllPosts = (req, res, next)=>{
 exports.deletePost = (req, res, next) => {
     const postId = req.params.id;
     const sql =    `DELETE from uploads
-                    WHERE id = ?`
-    db.query(sql, [postId], (err, rows, fields)=> {
+                    WHERE id = ${postId}`
+    db.query(sql, (err, results)=> {
         if(!err){
-            res.send('deleted again')
-            console.log('worked')
+            res.send('deleted 4');
         }
         else{
             console.log(err);
@@ -59,15 +58,15 @@ exports.deletePost = (req, res, next) => {
   }
 
   
-//   exports.createPost = (req, res, next) => {
-//     const sql = `INSERT INTO uploads (id, content, author)
-//                 VALUES (3, newGif, 2)`;
-//     db.query(sql, async (err, results)=> {
-//         try{
-//             const post =await res.send(results)
-//         }catch{
-//             res.status(400).json({message: err});
-//         }
-//     })
-//   }
+  exports.createPost = (req, res, next) => {
+    const sql = `INSERT INTO uploads (content, author)
+                VALUES ('newGif', '2')`;
+    db.query(sql, async (err, results)=> {
+        try{
+            const post =await res.send('posted 2')
+        }catch{
+            res.status(400).json({message: err});
+        }
+    })
+  }
   
