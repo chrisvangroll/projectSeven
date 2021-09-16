@@ -13,7 +13,7 @@ const forumCtrl = require('../controllers/forum');
 
   router.get('/:id', forumCtrl.getPost);
 
-  // router.put('/:id', forumCtrl.updatePost);
+  router.put('/:id', forumCtrl.updatePost);
 
   router.delete('/:id', forumCtrl.deletePost);
 
