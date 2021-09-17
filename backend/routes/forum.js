@@ -13,8 +13,6 @@ const forumCtrl = require('../controllers/forum');
 
   router.get('/:id', forumCtrl.getPost);
 
-  // router.post('/comment/:id', forumCtrl.createComment);
-
   router.put('/:id', forumCtrl.updatePost);
 
   router.delete('/:id', forumCtrl.deletePost);

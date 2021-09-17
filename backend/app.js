@@ -33,10 +33,12 @@ app.use(cors());
 app.use(bodyParser.json());
 const forumRoutes = require('./routes/forum');
 // const userRoutes = require('./routes/user');
-// const commentRoutes = require('./routes/comment');
+const commentRoutes = require('./routes/comment');
 
 
 app.use('/forum', forumRoutes);
+
+app.use('/comment', commentRoutes);
 
 // app.use('/auth', userRoutes);
 

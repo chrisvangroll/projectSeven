@@ -93,19 +93,7 @@ exports.deletePost = (req, res, next) => {
     })
   }
 
-  exports.createComment = (req, res, next) => {
-    const postId = req.params.id;
-    
-    const sql = `INSERT INTO comments (commenter, uploadId, comment)
-                VALUES ('1', ${postId}, 'test comment')`;
-    db.query(sql, async (err, results)=> {
-        try{
-            const post =await res.send('comment')
-        }catch{
-            res.status(400).json({message: err});
-        }
-    })
-  }
+  
 
 
   exports.updatePost = (req, res, next) => {
