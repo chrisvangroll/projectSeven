@@ -39,7 +39,7 @@ exports.deletePost = (req, res, next) => {
                     WHERE id = ${postId}`
     db.query(sql, (err, results)=> {
         if(!err){
-            res.send('deleted 4');
+            res.send('Deleted Successfully');
         }
         else{
             console.log(err);
@@ -49,10 +49,10 @@ exports.deletePost = (req, res, next) => {
 
 
   exports.getPost = (req, res, next) => {
-    const postId = req.params.id;
+        const postId = req.params.id;
     const sql = `SELECT uploads.content, users.name, users.id
                  FROM uploads 
-                 INNER JOIN users ON uploads.id = users.id
+                 INNER JOIN users ON uploads.author = users.id
                  WHERE uploads.id = ${postId}`;
     db.query(sql, async (err, results)=> {
         try{
