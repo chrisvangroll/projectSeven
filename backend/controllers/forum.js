@@ -21,6 +21,18 @@ exports.getAllPosts = (req, res, next)=>{
     })
 }
 
+exports.getComments = (req, res, next)=>{
+    let sql = "SELECT * FROM comments";
+    db.query(sql, async (err, results)=> {
+        try{
+            const allPosts = res.send(results)
+            
+        }catch{
+            res.status(400).json({message: err});
+        }
+    })
+}
+
 exports.deletePost = (req, res, next) => {
     const postId = req.params.id;
     const sql =    `DELETE from uploads
@@ -53,11 +65,11 @@ exports.deletePost = (req, res, next) => {
 
   
   exports.createPost = (req, res, next) => {
-    // ??
-    //const userId = id stored in local storage
-    // https://javascript.plainenglish.io/libraries-for-using-localstorage-in-your-node-js-project-3ff5ac1a3512
+   
+    const userId = req.body.userId;
+    const content = req.body.content;
     const sql = `INSERT INTO uploads (content, author)
-                VALUES ('newGif', '2')`;
+                VALUES (${content}, ${userId})`;
     db.query(sql, async (err, results)=> {
         try{
             const post =await res.send('posted 2')
@@ -69,14 +81,26 @@ exports.deletePost = (req, res, next) => {
 
   exports.likePost = (req, res, next) => {
     const postId = req.params.id;
-    // ??
-    //const userId = id stored in local storage
-    // https://javascript.plainenglish.io/libraries-for-using-localstorage-in-your-node-js-project-3ff5ac1a3512
+    const userId = req.body.id;
     const sql = `INSERT INTO likes (idUser, idUpload, liked)
-                VALUES ('1', ${postId}, '1')`;
+                VALUES (${userId}, ${postId}, '1')`;
     db.query(sql, async (err, results)=> {
         try{
             const post =await res.send('liked 9')
+        }catch{
+            res.status(400).json({message: err});
+        }
+    })
+  }
+
+  exports.createComment = (req, res, next) => {
+    const postId = req.params.id;
+    
+    const sql = `INSERT INTO comments (commenter, uploadId, comment)
+                VALUES ('1', ${postId}, 'test comment')`;
+    db.query(sql, async (err, results)=> {
+        try{
+            const post =await res.send('comment')
         }catch{
             res.status(400).json({message: err});
         }
@@ -91,7 +115,7 @@ exports.deletePost = (req, res, next) => {
                  WHERE uploads.id = ${postId}`;
     db.query(sql, async (err, results)=> {
         try{
-            const post =await res.send('post updated')
+            const post =await res.send('post updated 1')
         }catch{
             res.status(400).json({message: err});
         }

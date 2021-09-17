@@ -31,8 +31,9 @@ db.connect((err)=>{
 app.use(cors());
 
 app.use(bodyParser.json());
-const forumRoutes = require('./routes/forum')
-const userRoutes = require('./routes/user');
+const forumRoutes = require('./routes/forum');
+// const userRoutes = require('./routes/user');
+// const commentRoutes = require('./routes/comment');
 
 
 app.use('/forum', forumRoutes);

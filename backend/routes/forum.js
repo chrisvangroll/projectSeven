@@ -9,9 +9,11 @@ const forumCtrl = require('../controllers/forum');
 
   router.get('/', forumCtrl.getAllPosts);
 
-  router.post('/likes/:id', forumCtrl.likePost);
+  router.post('/:id', forumCtrl.likePost);
 
   router.get('/:id', forumCtrl.getPost);
+
+  // router.post('/comment/:id', forumCtrl.createComment);
 
   router.put('/:id', forumCtrl.updatePost);
 
