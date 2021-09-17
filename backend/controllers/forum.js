@@ -53,6 +53,9 @@ exports.deletePost = (req, res, next) => {
 
   
   exports.createPost = (req, res, next) => {
+    // ??
+    //const userId = id stored in local storage
+    // https://javascript.plainenglish.io/libraries-for-using-localstorage-in-your-node-js-project-3ff5ac1a3512
     const sql = `INSERT INTO uploads (content, author)
                 VALUES ('newGif', '2')`;
     db.query(sql, async (err, results)=> {
@@ -64,6 +67,23 @@ exports.deletePost = (req, res, next) => {
     })
   }
 
+  exports.likePost = (req, res, next) => {
+    const postId = req.params.id;
+    // ??
+    //const userId = id stored in local storage
+    // https://javascript.plainenglish.io/libraries-for-using-localstorage-in-your-node-js-project-3ff5ac1a3512
+    const sql = `INSERT INTO likes (idUser, idUpload, liked)
+                VALUES ('1', ${postId}, '1')`;
+    db.query(sql, async (err, results)=> {
+        try{
+            const post =await res.send('liked 9')
+        }catch{
+            res.status(400).json({message: err});
+        }
+    })
+  }
+
+
   exports.updatePost = (req, res, next) => {
     const postId = req.params.id;
     const sql = `UPDATE uploads
@@ -71,7 +91,7 @@ exports.deletePost = (req, res, next) => {
                  WHERE uploads.id = ${postId}`;
     db.query(sql, async (err, results)=> {
         try{
-            const post =await res.send('update')
+            const post =await res.send('post updated')
         }catch{
             res.status(400).json({message: err});
         }
