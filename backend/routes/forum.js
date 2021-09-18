@@ -5,7 +5,7 @@ const forumCtrl = require('../controllers/forum');
 
 
 
-  router.post('/create', forumCtrl.createPost);
+  router.post('/', forumCtrl.createPost);
 
   router.get('/', forumCtrl.getAllPosts);
 

@@ -22,6 +22,18 @@ exports.createComment = (req, res, next) => {
     })
   }
 
+  exports.getComments = (req, res, next)=>{
+    let sql = "SELECT * FROM comments";
+    db.query(sql, async (err, results)=> {
+        try{
+            const allPosts = res.send(results)
+            
+        }catch{
+            res.status(400).json({message: err});
+        }
+    })
+}
+
   exports.deleteComment = (req, res, next) => {
     const commentId = req.params.id;
     const sql =    `DELETE from comments
