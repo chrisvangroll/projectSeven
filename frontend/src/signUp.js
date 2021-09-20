@@ -31,6 +31,7 @@ function Signup (){
             email: email,
             password: password
             })
+            console.log(res);
         }catch(err){
             console.log(err)
         }
@@ -46,9 +47,9 @@ function Signup (){
                 <input type="text" id="email" onChange = {regEmail}/>
                 <label htmlFor="password">Password</label>
                 <input type="text" id="password" onChange = {regPassword}/>
-                <button onClick = {sendSignUpData}>Sign Up</button>
                 <Link to="/">Login</Link>
             </form>
+                <button onClick = {sendSignUpData}>Sign Up</button>
         </div>
     )
 }
