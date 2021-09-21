@@ -41,9 +41,9 @@ exports.signup =  (req, res, next) =>{
                  const comparison = await bcrypt.compare(password, results[0].password);
 
                  if(comparison){
-                     res.send({message: 'login successful', userId : results[0].id})
+                     res.status(200).json({message: 'login successful', userId : results[0].id})
                  }else{
-                    res.send('email and password do not match');
+                    res.status(204).json({message: 'email and password do not match'})
                  }
             }catch{
                 res.status(400).json({message: err});
