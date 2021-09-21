@@ -38,24 +38,27 @@ exports.signup =  (req, res, next) =>{
         db.query(sql, async (err, results)=>{
             try{
                  const post = await (results);
-                 const comparison = await bcrypt.compare(password, results[0].password);
 
-                 if(comparison){
-                     res.status(200).json({message: 'login successful', userId : results[0].id})
+                 if(results.length > 0){
+                    const comparison = await bcrypt.compare(password, results[0].password);
+
+                    if(comparison){
+                        res.status(200).json({message: 'login successful', userId : results[0].id})
+                    }else{
+                       res.status(200).json({message: 'email and password do not match'})
+                    }
                  }else{
-                    res.status(204).json({message: 'email and password do not match'})
+                    res.status(206).json({message: 'email does not exist'})
                  }
+                
             }catch{
                 res.status(400).json({message: err});
-            }
-            
+            } 
         })
     }catch{
-
+        res.status(400).json({message: err});
     }
-    
-
-    
+     
   }
   // exports.login = (req, res, next) => {
   //   User.findOne({ email: req.body.email }).then(
