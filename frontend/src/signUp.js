@@ -31,12 +31,11 @@ function Signup (){
             email: email,
             password: password
             })
-            console.log(res);
+            window.location = 'http://localhost:3000/forum';
         }catch(err){
             console.log(err)
         }
       };
-
     return(
         <div>
             <h1>Sign Up</h1>
@@ -47,9 +46,11 @@ function Signup (){
                 <input type="text" id="email" onChange = {regEmail}/>
                 <label htmlFor="password">Password</label>
                 <input type="text" id="password" onChange = {regPassword}/>
-                <Link to="/">Login</Link>
             </form>
                 <button onClick = {sendSignUpData}>Sign Up</button>
+                <br />
+                <br />
+                <Link to="/">Login</Link>
         </div>
     )
 }
