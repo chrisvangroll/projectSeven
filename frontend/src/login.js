@@ -29,6 +29,20 @@ function Login (){
             email: email,
             password: password
             });
+               if(res.data.message == 'email does not exist'){
+                   console.log(res.data.message)
+               }
+               if(res.data.message == 'email and password do not match'){
+                console.log(res.data.message)
+              }
+              //console.log(res.data.userId)
+              if(res.data.message == 'login successful'){
+                function setStorage(value){
+                    localStorage.setItem('id', JSON.stringify(value));
+                }
+                setStorage(res.data.userId);
+                window.location = 'http://localhost:3000/forum'
+              }
             // if(res.data.id == 'Email/Password combination not found'){
             //     console.log('Email/Password combination not found');
             // }else{
@@ -39,7 +53,6 @@ function Login (){
             //     setStorage(res.data[0].id);
                // window.location = 'http://localhost:3000/forum';
            // }
-           console.log(res);
         }catch(err){
             console.log(err)
         }
