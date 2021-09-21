@@ -7,6 +7,7 @@ function Login (){
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [message, setMessage] = useState('');
 
 
     const logEmail = (e) =>{
@@ -15,6 +16,10 @@ function Login (){
 
     const logPassword = (e) =>{
         setPassword(e.target.value);
+    }
+
+    const getMessage = (message) =>{
+        setMessage(message)
     }
 
     // const sendLoginData = () => {
@@ -30,12 +35,13 @@ function Login (){
             password: password
             });
                if(res.data.message == 'email does not exist'){
+                   getMessage(res.data.message);
                    console.log(res.data.message)
                }
                if(res.data.message == 'email and password do not match'){
+                getMessage(res.data.message);
                 console.log(res.data.message)
               }
-              //console.log(res.data.userId)
               if(res.data.message == 'login successful'){
                 function setStorage(value){
                     localStorage.setItem('id', JSON.stringify(value));
@@ -43,16 +49,6 @@ function Login (){
                 setStorage(res.data.userId);
                 window.location = 'http://localhost:3000/forum'
               }
-            // if(res.data.id == 'Email/Password combination not found'){
-            //     console.log('Email/Password combination not found');
-            // }else{
-            //     console.log(res)
-            //     function setStorage(value){
-            //         localStorage.setItem('id', JSON.stringify(value));
-            //     }
-            //     setStorage(res.data[0].id);
-               // window.location = 'http://localhost:3000/forum';
-           // }
         }catch(err){
             console.log(err)
         }
@@ -67,11 +63,12 @@ function Login (){
                 <input type="text" id="email" onChange={logEmail}/>
                 <label htmlFor="password">Password</label>
                 <input type="text" id="password" onChange={logPassword}/>
-                <br />
-                <Link to="/signup">Sign Up</Link>
             </form>
             <button onClick={sendLoginData}>Login</button>
-            
+            <br />
+            <h2>{message}</h2>
+            <br />
+            <Link to="/signup">Sign Up</Link> 
         </div>
     )
 }
