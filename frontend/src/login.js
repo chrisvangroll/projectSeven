@@ -29,15 +29,17 @@ function Login (){
             email: email,
             password: password
             });
-            if(res.data.id == 'Email/Password combination not found'){
-                console.log('Email/Password combination not found');
-            }else{
-                function setStorage(value){
-                    localStorage.setItem('id', JSON.stringify(value));
-                }
-                setStorage(res.data[0].id);
-                window.location = 'http://localhost:3000/forum';
-            }
+            // if(res.data.id == 'Email/Password combination not found'){
+            //     console.log('Email/Password combination not found');
+            // }else{
+            //     console.log(res)
+            //     function setStorage(value){
+            //         localStorage.setItem('id', JSON.stringify(value));
+            //     }
+            //     setStorage(res.data[0].id);
+               // window.location = 'http://localhost:3000/forum';
+           // }
+           console.log(res);
         }catch(err){
             console.log(err)
         }

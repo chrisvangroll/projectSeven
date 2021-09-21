@@ -26,7 +26,7 @@ function Signup (){
 
     const sendSignUpData = async ()=>{
         try{
-            const res = Axios.post('http://localhost:3001/auth/signup',{
+            const res = await Axios.post('http://localhost:3001/auth/signup',{
             name: name,
             email: email,
             password: password

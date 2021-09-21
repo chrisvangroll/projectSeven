@@ -28,20 +28,34 @@ exports.signup =  (req, res, next) =>{
 }
 
 
-  exports.login = (req, res, next) =>{
+  exports.login = async(req, res, next) =>{
     const password = req.body.password;
     const email = req.body.email;
-    const sql = `SELECT id
+    const sql = `SELECT id, email, password
                  FROM users
-                 WHERE email = '${email}'  AND password = '${password}'`;
+                 WHERE email = '${email}'`;
+    try{
+        db.query(sql, async (err, results)=>{
+            try{
+                 const post = await (results);
+                 const comparison = await bcrypt.compare(password, results[0].password);
 
-    db.query(sql, async (err, results)=>{
-      try{
-          const post =await results.length > 0 ? res.status(200).json(results): res.status(200).json({id : 'Email/Password combination not found'});
-      }catch{
-          res.status(400).json({message: err});
-      }
-  })
+                 if(comparison){
+                     res.send({message: 'login successful', userId : results[0].id})
+                 }else{
+                    res.send('email and password do not match');
+                 }
+            }catch{
+                res.status(400).json({message: err});
+            }
+            
+        })
+    }catch{
+
+    }
+    
+
+    
   }
   // exports.login = (req, res, next) => {
   //   User.findOne({ email: req.body.email }).then(
