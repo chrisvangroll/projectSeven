@@ -31,23 +31,25 @@ function MakePost (props) {
     //     console.log(file[0])
     // }
     const sendPost = async ()=>{
-        // function getStorage(){
-        //     let userId = localStorage.getItem('id');
-        //     userId = JSON.parse(userId);
-        //     return userId;
-        // }
+        function getStorage(){
+            let userId = localStorage.getItem('id');
+            userId = JSON.parse(userId);
+            return userId;
+        }
         //console.log(file[0]);
         const formData = new FormData();
         formData.append('gif', file[0]);
+        formData.append('author', getStorage());
+        formData.append('title', title);
         const config = {
             headers: {
                 'content-type': 'multipart/form-data'
             }
         }
         try{
-            const res = await Axios.post('http://localhost:3001/forum',formData, config)
-            console.log('upload successfully');
-            //window.location = 'http://localhost:3000/forum';
+            const res = await Axios.post('http://localhost:3001/forum', formData)
+            console.log('uploaded successfully');
+            window.location = 'http://localhost:3000/forum';
         }catch(err){
             console.log(err)
         }

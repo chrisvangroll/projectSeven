@@ -58,12 +58,12 @@ exports.deletePost = (req, res, next) => {
   
   exports.createPost = (req, res, next) => {
    
-    //const author = req.body.author;
+    const author = req.body.author;
     //const content = req.body.content;
-    //const title = req.body.title;
-    const author = '2';
+    const title = req.body.title;
+    //const author = '2';
     // const content = 'working on multer2';
-    const title = 'multer3';
+    //const title = 'multer3';
     const url = req.protocol + '://' + req.get('host');
     const content = url + '/images/' + req.file.filename;
 
