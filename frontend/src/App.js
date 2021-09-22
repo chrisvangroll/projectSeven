@@ -1,9 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
 import Login from './login';
 import Forum from './forum';
 import Account from'./account';
 import Signup from  './signUp';
+import MakePost from './makePost';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
@@ -22,6 +22,9 @@ function App() {
         </Route>
         <Route path="/forum">
           <Forum/>
+        </Route>
+        <Route path="/create">
+          <MakePost/>
         </Route>
       </Switch>
      </div>

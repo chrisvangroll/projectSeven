@@ -3,6 +3,7 @@ const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
+const path = require('path');
 require('dotenv/config');
 
 const db = mysql.createConnection({
@@ -31,6 +32,8 @@ const forumRoutes = require('./routes/forum');
 const userRoutes = require('./routes/user');
 const commentRoutes = require('./routes/comment');
 
+
+app.use('/images', express.static(path.join(__dirname, 'images')));
 
 app.use('/forum', forumRoutes);
 

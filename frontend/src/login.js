@@ -34,15 +34,15 @@ function Login (){
             email: email,
             password: password
             });
-               if(res.data.message == 'email does not exist'){
+               if(res.data.message === 'email does not exist'){
                    getMessage(res.data.message);
                    console.log(res.data.message)
                }
-               if(res.data.message == 'email and password do not match'){
+               if(res.data.message === 'email and password do not match'){
                 getMessage(res.data.message);
                 console.log(res.data.message)
               }
-              if(res.data.message == 'login successful'){
+              if(res.data.message === 'login successful'){
                 function setStorage(value){
                     localStorage.setItem('id', JSON.stringify(value));
                 }

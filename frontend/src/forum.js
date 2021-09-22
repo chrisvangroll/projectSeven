@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Axios from 'axios';
 import {Link } from 'react-router-dom';
-import axios from 'axios';
 import Post from './post';
 import Nav from './nav';
 

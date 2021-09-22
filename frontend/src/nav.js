@@ -9,7 +9,7 @@ function Nav (props) {
             <Link className='link' to="/forum">Forum</Link> 
             <Link className='link' to="/create">Create Post</Link> 
             <Link className='link' to="/account">Account</Link> 
-            <Link className='link' to="/account">Log Out</Link> 
+            <Link className='link' to="/">Log Out</Link> 
         </nav>
     )
 }
