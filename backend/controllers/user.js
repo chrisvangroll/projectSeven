@@ -16,10 +16,31 @@ exports.signup =  (req, res, next) =>{
     const email = req.body.email;
     bcrypt.hash(password, 10, (err, hash)=>{
         const sql = `INSERT INTO users (name, email, password)
-                    VALUES ('${name}', '${email}', '${hash}')`
+                    VALUES ('${name}', '${email}', '${hash}');`
         db.query(sql, async (err, results)=>{
             try{
-                const post =await res.status(200).json({message: 'signed up successfully'})
+                const post =await results;
+
+                const sqlTwo = `SELECT id
+                               FROM users
+                               WHERE email = '${email}'`
+                    
+                    db.query(sqlTwo, async (err, results)=>{
+                        try{
+                            const post =await results;
+                            const token = jwt.sign(
+                                { userId: results[0].id },
+                                process.env.JWT_KEY,
+                                { expiresIn: '24h' });
+                            res.status(201).json(
+                                {message: 'signup successful', 
+                                userId : results[0].id, 
+                                token: token})
+                            
+                        }catch{
+                            res.status(400).json({message: err});
+                        }
+                    })
             }catch{
                 res.status(400).json({message: err});
             }
