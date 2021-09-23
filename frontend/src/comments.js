@@ -21,6 +21,7 @@ console.log(props.uploadId3)
    
     return(
         <div >
+            <h3>Comment Section</h3>
            <div>{comments.map(comment=>(
                 <Comment commentId={comment.id} commenter={comment.commenter} uploadId3={comment.uploadId} comment={comment.comment}/>
             ))}</div>

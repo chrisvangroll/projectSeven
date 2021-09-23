@@ -4,7 +4,6 @@ function Comment (props) {
     
     return(
         <div >
-           <div>Comment</div>
            <div>{props.comment}</div>
         </div>
     )

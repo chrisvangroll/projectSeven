@@ -79,8 +79,12 @@ exports.deletePost = (req, res, next) => {
   }
 
   exports.likePost = (req, res, next) => {
-    const postId = req.params.id;
-    const userId = req.body.id;
+    const postId = req.body.uploadId;
+    console.log(postId)
+    const userId = req.body.userId;
+    console.log(userId)
+    // const postId = '27';
+    // const userId = '6';
     const sql = `INSERT INTO likes (idUser, idUpload, liked)
                 VALUES (${userId}, ${postId}, '1')`;
     db.query(sql, async (err, results)=> {

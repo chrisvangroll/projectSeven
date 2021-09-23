@@ -30,7 +30,7 @@ const MakeComment = (props) =>{
 
     return (
         <div>
-            <div>Comment Here</div>
+            <h3>Post a comment</h3>
             <input type="text" onChange = {logComment}/>
             <button onClick = {sendComment}>submit comment</button>
         </div>
