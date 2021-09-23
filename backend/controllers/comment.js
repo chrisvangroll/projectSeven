@@ -9,13 +9,15 @@ const db = mysql.createConnection({
     })
 
 exports.createComment = (req, res, next) => {
-    const postId = req.params.id;
+    const commenter = req.body.userId;
+    const uploadId = req.body.uploadId;
+    const comment = req.body.content;
     
     const sql = `INSERT INTO comments (commenter, uploadId, comment)
-                VALUES ('2', ${postId}, 'test comment 2')`;
+                VALUES ('${commenter}', ${uploadId}, '${comment}')`;
     db.query(sql, async (err, results)=> {
         try{
-            const post =await res.send('comment')
+            const post =await res.status(201).json({message: 'commented successfully'})
         }catch{
             res.status(400).json({message: err});
         }

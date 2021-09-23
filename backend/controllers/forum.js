@@ -12,7 +12,7 @@ const db = mysql.createConnection({
     })
 
 exports.getAllPosts = (req, res, next)=>{
-    let sql = "SELECT uploads.content, uploads.id, uploads.author, uploads.id, users.id, users.name FROM uploads INNER JOIN users ON uploads.author = users.id ";
+    let sql = "SELECT uploads.content, uploads.id, uploads.author, uploads.id, uploads.title, users.name FROM uploads INNER JOIN users ON uploads.author = users.id ";
     db.query(sql, async (err, results)=> {
         try{
             const allPosts = await res.status(200).json(results);
