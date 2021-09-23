@@ -6,5 +6,6 @@ const verifyPassword = require('../middleware/verifyPassword')
 
 router.post('/signup', verifyPassword, userCtrl.signup);
 router.post('/login', bouncer.block, userCtrl.login);
+router.delete('/delete', userCtrl.deleteUser )
 
 module.exports = router;

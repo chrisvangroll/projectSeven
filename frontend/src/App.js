@@ -26,6 +26,9 @@ function App() {
         <Route path="/create">
           <MakePost/>
         </Route>
+        <Route path="/account">
+          <Account/>
+        </Route>
       </Switch>
      </div>
      

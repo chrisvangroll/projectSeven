@@ -16,7 +16,7 @@ function Forum (){
         try{
             const res = await Axios.get('http://localhost:3001/forum');
             setPosts(res.data);   
-            console.log(posts)
+            console.log(res)
         }catch(err){
             console.log(err);
         }
@@ -31,7 +31,7 @@ function Forum (){
 
             <div>I have {posts.length} posts</div>
             <div>{posts.map(post=>(
-                <Post title={post.title} content={post.content} author={post.author}/>
+                <Post title={post.title} content={post.content} author={post.author} name={post.name} id={post.id}/>
             ))}</div>
 
             {/* <button onClick= {getPosts}>click for data</button>

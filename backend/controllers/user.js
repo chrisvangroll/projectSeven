@@ -88,6 +88,20 @@ exports.signup =  (req, res, next) =>{
     }
      
   }
+
+  exports.deleteUser = (req, res, next) => {
+    const userId = req.body.userId;
+    const sql =    `DELETE from users
+                    WHERE id = '${userId}'`
+
+    db.query(sql, async (err, results)=> {
+        try{
+            const post =await res.status(200).json({message: 'user deleted'});
+        }catch{
+            res.status(400).json({message: err});
+        }
+    }                
+    )}
   // exports.login = (req, res, next) => {
   //   User.findOne({ email: req.body.email }).then(
   //     (user) => {
