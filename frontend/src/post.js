@@ -4,8 +4,8 @@ function Post (props) {
     return(
         <div>
             <h2>{props.title}</h2>
-            <div>{props.content}</div>
-            <div>{props.author}</div>
+            <img src={props.content} alt="pic" />
+            <div>by {props.author}</div>
         </div>
     )
 }
