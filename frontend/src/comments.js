@@ -6,14 +6,13 @@ function Comments (props) {
     useEffect(() =>{
         getComments();
     }, []);
-
+console.log(props.uploadId3)
     const [comments, setComments] = useState([]);
 
     const getComments = async ()=>{
         try{
-            const res = await Axios.get('http://localhost:3001/comment');
-            setComments(res.data);
-            console.log(comments);   
+            const res = await Axios.get('http://localhost:3001/comment/' + props.uploadId3);
+            setComments(res.data); 
             
         }catch(err){
             console.log(err);

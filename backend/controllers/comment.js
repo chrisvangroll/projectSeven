@@ -25,7 +25,8 @@ exports.createComment = (req, res, next) => {
   }
 
   exports.getComments = (req, res, next)=>{
-    let sql = "SELECT * FROM comments";
+      const uploadId = req.params.id;
+    let sql = `SELECT * FROM comments WHERE uploadId = '${uploadId}'`;
     db.query(sql, async (err, results)=> {
         try{
             const allPosts = res.send(results)

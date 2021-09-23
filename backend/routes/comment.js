@@ -4,7 +4,7 @@ const commentCtrl = require('../controllers/comment');
 
 router.post('/', commentCtrl.createComment);
 
-router.get('/', commentCtrl.getComments)
+router.get('/:id', commentCtrl.getComments)
 
 router.delete('/', commentCtrl.deleteComment);
 

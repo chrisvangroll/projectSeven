@@ -10,7 +10,7 @@ function Post (props) {
             <h2>{props.title}</h2>
             <img src={props.content} alt="pic" />
             <div>Author: {props.name}</div>
-            <Comments/>
+            <Comments uploadId3 = {props.uploadId}/>
             <MakeComment uploadId2= {props.uploadId}/>
         </div>
     )
