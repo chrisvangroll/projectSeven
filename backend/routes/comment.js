@@ -4,12 +4,12 @@ const commentCtrl = require('../controllers/comment');
 
 router.post('/', commentCtrl.createComment);
 
-router.get('/:id', commentCtrl.getComments)
+router.get('/', commentCtrl.getComments)
 
-router.delete('/:id', commentCtrl.deleteComment);
+router.delete('/', commentCtrl.deleteComment);
 
-router.put('/:id', commentCtrl.updateComment);
+router.put('/', commentCtrl.updateComment);
 
-router.post('/likes/:id', commentCtrl.likeComment);
+router.post('/likes', commentCtrl.likeComment);
 
 module.exports = router;

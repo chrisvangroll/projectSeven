@@ -20,7 +20,7 @@ const MakeComment = (props) =>{
         try{
             const res = await Axios.post('http://localhost:3001/comment',{
             userId: getStorage(),
-            uploadId: props.uploadId,
+            uploadId: props.uploadId2,
             content : comment
             });
         }catch(err){
