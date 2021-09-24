@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import './auth.css';
+//import '../styles/auth.css';
+//import './auth.css';
 import Axios from 'axios';
 import {Link } from 'react-router-dom';
 

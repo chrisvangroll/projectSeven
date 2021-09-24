@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from './nav';
 import Axios from 'axios';
-import Utils from './utils'
+import Utils from '../utils'
 
 function Account (){
     function getStorage(){
