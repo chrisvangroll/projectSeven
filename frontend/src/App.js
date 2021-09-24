@@ -1,11 +1,11 @@
 import './styles/App.css';
 import './styles/auth.css';
 import './styles/nav.css';
-import Login from './components/login';
-import Forum from './components/forum';
-import Account from'./components/account';
-import Signup from  './components/signUp';
-import MakePost from './components/makePost';
+import Login from './components/auth/login';
+import Forum from './components/posts/forum';
+import Account from'./components/nav/account';
+import Signup from  './components/auth/signUp';
+import MakePost from './components/nav/makePost';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
