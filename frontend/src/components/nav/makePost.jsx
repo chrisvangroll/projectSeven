@@ -1,7 +1,7 @@
 import React, {useState}  from 'react';
 import {Link } from 'react-router-dom';
 import Axios from 'axios';
-import Nav from './nav';
+import Nav from './nav.jsx';
 
 
 

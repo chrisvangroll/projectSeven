@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import MakeComment from './makeComment';
-import Comments from './comments';
-import Likes from './likes';
+import MakeComment from './makeComment.jsx';
+import Comments from './comments.jsx';
+import Likes from './likes.jsx';
 
 function Post (props) {
     

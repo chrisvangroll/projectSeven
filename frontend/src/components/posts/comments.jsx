@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import Comment from './comment';
+import Comment from './comment.jsx';
 import Axios from 'axios';
 
 function Comments (props) {

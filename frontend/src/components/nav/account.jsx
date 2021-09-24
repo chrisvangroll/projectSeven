@@ -1,5 +1,5 @@
 import React from 'react';
-import Nav from './nav';
+import Nav from './nav.jsx';
 import Axios from 'axios';
 import Utils from '../../utils'
 
