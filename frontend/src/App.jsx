@@ -7,6 +7,7 @@ import Forum from './components/posts/forum.jsx';
 import Account from'./components/nav/account.jsx';
 import Signup from  './components/auth/signUp.jsx';
 import MakePost from './components/nav/makePost.jsx';
+import Modify from './components/posts/modify'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
@@ -31,6 +32,9 @@ function App() {
         </Route>
         <Route path="/account">
           <Account/>
+        </Route>
+        <Route path="/modify">
+          <Modify/>
         </Route>
       </Switch>
      </div>

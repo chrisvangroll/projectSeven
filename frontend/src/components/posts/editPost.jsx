@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {Link } from 'react-router-dom';
 
 function EditPost (props) {
 
@@ -9,14 +9,13 @@ function EditPost (props) {
         return userId;
     }
 
-    const toEdit = () => props.author1 === getStorage() ? "Edit Post" : "Not Allowed to Edit";
-    // console.log(getStorage())
-    // console.log(props.author1)
-    console.log(toEdit())
+    const toEdit = () => props.author1 === getStorage() ? "" : "editBtn";
+
+
    
     return(
         <div id ={props.uploadId}>
-            <button className = 'editBtn'>Edit post</button>
+            <Link className = {toEdit()} to="/modify">Edit post</Link>
             <div>{toEdit()}</div>
         </div>
     )
