@@ -9,12 +9,12 @@ const db = mysql.createConnection({
     })
 
 exports.createComment = (req, res, next) => {
-    // const commenter = req.body.userId;
-    // const uploadId = req.body.uploadId;
-    // const comment = req.body.content;
-    const commenter = '38';
-    const uploadId = '29';
-    const comment = 'good post';
+    const commenter = req.body.userId;
+    const uploadId = req.body.uploadId;
+    const comment = req.body.content;
+    // const commenter = '38';
+    // const uploadId = '29';
+    // const comment = 'good post';
     
     const sql = `INSERT INTO comments (commenter, uploadId, comment)
                 VALUES ('${commenter}', ${uploadId}, '${comment}')`;

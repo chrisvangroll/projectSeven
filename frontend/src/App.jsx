@@ -1,6 +1,7 @@
 import './styles/App.css';
 import './styles/auth.css';
 import './styles/nav.css';
+import './styles/editBtn.css';
 import Login from './components/auth/login.jsx';
 import Forum from './components/posts/forum.jsx';
 import Account from'./components/nav/account.jsx';

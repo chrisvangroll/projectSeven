@@ -18,6 +18,33 @@ console.log(props.uploadId3)
             console.log(err);
         }
     }
+
+    const [comment, setComment] = useState('');
+
+    const logComment = (e) =>{
+        setComment(e.target.value);
+        console.log(comment);
+    }
+
+    function getStorage(){
+        let userId = localStorage.getItem('id');
+        userId = JSON.parse(userId);
+        return userId;
+    }
+
+    const sendComment = async ()=>{
+        try{
+            const res = await Axios.post('http://localhost:3001/comment',{
+            userId: getStorage(),
+            uploadId: props.uploadId3,
+            content : comment
+            });
+            getComments();
+        }catch(err){
+            console.log(err)
+        }
+      };
+
    
     return(
         <div >
@@ -25,6 +52,9 @@ console.log(props.uploadId3)
            <div>{comments.map(comment=>(
                 <Comment commentId={comment.id} commenter={comment.commenter} uploadId3={comment.uploadId} comment={comment.comment}/>
             ))}</div>
+            <h3>Post a comment</h3>
+            <input type="text" onChange = {logComment}/>
+            <button onClick = {sendComment}>submit comment</button>
         </div>
     )
 }
