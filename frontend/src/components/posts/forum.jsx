@@ -23,7 +23,7 @@ function Forum (){
     const getPosts = async ()=>{
         try{
             const res = await Axios.get('http://localhost:3001/forum');
-            console.log(res.data);
+            //console.log(res.data);
             setPosts(res.data);   
             
         }catch(err){

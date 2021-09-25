@@ -6,7 +6,7 @@ function Comments (props) {
     useEffect(() =>{
         getComments();
     }, []);
-console.log(props.uploadId3)
+
     const [comments, setComments] = useState([]);
 
     const getComments = async ()=>{
@@ -23,7 +23,7 @@ console.log(props.uploadId3)
 
     const logComment = (e) =>{
         setComment(e.target.value);
-        console.log(comment);
+        // console.log(comment);
     }
 
     function getStorage(){

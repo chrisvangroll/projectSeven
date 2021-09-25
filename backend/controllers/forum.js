@@ -41,9 +41,8 @@ exports.deletePost = (req, res, next) => {
 
   exports.getPost = (req, res, next) => {
         const postId = req.params.id;
-    const sql = `SELECT uploads.content, users.name, users.id
+    const sql = `SELECT *
                  FROM uploads 
-                 INNER JOIN users ON uploads.author = users.id
                  WHERE uploads.id = ${postId}`;
     db.query(sql, async (err, results)=> {
         try{

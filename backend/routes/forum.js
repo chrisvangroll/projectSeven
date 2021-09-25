@@ -14,7 +14,7 @@ const multer = require('../middleware/multer-config');
 
   router.get('/likes/:id', forumCtrl.getLikes);
 
-  router.get('/:id', forumCtrl.getPost);
+  router.get('/:id/post', forumCtrl.getPost);
 
   router.put('/:id', forumCtrl.updatePost);
 
