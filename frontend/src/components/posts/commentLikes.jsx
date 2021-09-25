@@ -17,7 +17,7 @@ function CommentLikes (props) {
 
     const getLikes = async ()=>{
         try{
-            const res = await Axios.get('http://localhost:3001/comment/likes/' + props.commentId2);
+            const res = await Axios.get('http://localhost:3001/comment/' + props.commentId2 + '/upvote/');
             setCommentLikes(res.data.length); 
             console.log(res.data)
             //console.log(res.data.length)
@@ -29,7 +29,7 @@ function CommentLikes (props) {
   
     const sendLike = async ()=>{
         try{
-        const res = await Axios.post('http://localhost:3001/comment/likes',{
+        const res = await Axios.post('http://localhost:3001/comment/upvote',{
             userId : getStorage(),
             commentId: props.commentId2 
         }

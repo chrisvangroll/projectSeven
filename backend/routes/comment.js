@@ -6,9 +6,9 @@ const commentCtrl = require('../controllers/comment');
 
 router.post('/', commentCtrl.createComment);
 
-// router.post('/likes', commentCtrl.likeComment);
+router.post('/upvote', commentCtrl.likeComment);
 
-// router.get('/likes/:id', commentCtrl.getCommentLikes);
+router.get('/:id/upvote', commentCtrl.getCommentLikes);
 
 router.get('/:id', commentCtrl.getComments)
 
