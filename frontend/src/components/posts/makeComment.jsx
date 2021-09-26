@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import Axios from 'axios';
 
 const MakeComment = (props) =>{
@@ -23,6 +23,7 @@ const MakeComment = (props) =>{
             uploadId: props.uploadId2,
             content : comment
             });
+            console.log(res);
         }catch(err){
             console.log(err)
         }

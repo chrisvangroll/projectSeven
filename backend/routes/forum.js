@@ -16,7 +16,7 @@ const multer = require('../middleware/multer-config');
 
   router.get('/:id/post', forumCtrl.getPost);
 
-  router.put('/:id', forumCtrl.updatePost);
+  router.put('/:id', multer, forumCtrl.updatePost);
 
   router.delete('/:id', forumCtrl.deletePost);
 

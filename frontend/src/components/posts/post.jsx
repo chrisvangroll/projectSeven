@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import MakeComment from './makeComment.jsx';
+import React from 'react';
+//import MakeComment from './makeComment.jsx';
 import Comments from './comments.jsx';
 import Likes from './likes.jsx';
 import EditPost from './editPost.jsx';

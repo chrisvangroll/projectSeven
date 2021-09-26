@@ -12,13 +12,13 @@ function Forum (){
     
     const [posts, setPosts] = useState([]);
 
-    function getStorage(){
-        let userId = localStorage.getItem('id');
-        userId = JSON.parse(userId);
-        return userId;
-    }
+    // function getStorage(){
+    //     let userId = localStorage.getItem('id');
+    //     userId = JSON.parse(userId);
+    //     return userId;
+    // }
 
-    const userId =getStorage();
+    // const userId =getStorage();
 
     const getPosts = async ()=>{
         try{

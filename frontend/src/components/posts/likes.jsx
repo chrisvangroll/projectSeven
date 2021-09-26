@@ -19,7 +19,7 @@ function Likes (props) {
         try{
             const res = await Axios.get('http://localhost:3001/forum/likes/' + props.uploadId4);
             setLikes(res.data.length); 
-            // console.log(res.data.length)
+            console.log(res)
             
         }catch(err){
             console.log(err);
@@ -33,6 +33,7 @@ function Likes (props) {
             uploadId: props.uploadId4 
         }
             );
+            console.log(res);
         }catch(err){
             console.log(err);
         }

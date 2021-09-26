@@ -39,6 +39,7 @@ function Comments (props) {
             uploadId: props.uploadId3,
             content : comment
             });
+            console.log(res);
             getComments();
         }catch(err){
             console.log(err)

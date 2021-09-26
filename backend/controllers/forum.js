@@ -62,6 +62,7 @@ exports.deletePost = (req, res, next) => {
     //const author = '2';
     // const content = 'working on multer2';
     //const title = 'multer3';
+    console.log(req.file)
     const url = req.protocol + '://' + req.get('host');
     const content = url + '/images/' + req.file.filename;
 
@@ -95,11 +96,27 @@ exports.deletePost = (req, res, next) => {
 
 
   exports.updatePost = (req, res, next) => {
+    //console.log(req.body)
+    //console.log(req.file)
+    console.log(req.body)
+    console.log(req.file)
+    const title = req.body.title;
     const postId = req.params.id;
-    const content = req.body.content;
+    //const content = req.body.content;
+    const url = req.protocol + '://' + req.get('host');
+    const content = url + '/images/' + req.file.filename;
+    //console.log(content[0]);
+    
+    //console.log(req.body.file)
+
+
+    //const author = '2';
+    // const content = 'working on multer2';
+    // const title = 'multer3';
+   
     const sql = `UPDATE uploads
-                 SET content = ${content};
-                 WHERE uploads.id = ${postId}`;
+                 SET content = '${content}', title ='${title}'
+                 WHERE uploads.id = '${postId}'`;
     db.query(sql, async (err, results)=> {
         try{
             const post =await res.status(201).json({message: 'updated successfully'});
