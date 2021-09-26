@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import Axios from 'axios';
 //import {Link } from 'react-router-dom';
-import Post from './post.jsx';
-import Nav from '../nav/nav.jsx';
+import Post from './post';
+import Nav from '../../nav/nav';
 
 function Forum (){
 
