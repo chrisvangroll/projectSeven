@@ -23,8 +23,8 @@ function Forum (){
     const getPosts = async ()=>{
         try{
             const res = await Axios.get('http://localhost:3001/forum');
-            //console.log(res.data);
-            setPosts(res.data);   
+            console.log(res.data);
+            setPosts(res.data.reverse());   
             
         }catch(err){
             console.log(err);
