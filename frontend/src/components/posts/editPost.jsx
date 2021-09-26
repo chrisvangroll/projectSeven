@@ -5,7 +5,6 @@ function EditPost (props) {
 
     const [uploadId, setId] = useState(props.uploadId5);
 
-    console.log(uploadId)
 
     function getStorage(){
         let userId = localStorage.getItem('id');

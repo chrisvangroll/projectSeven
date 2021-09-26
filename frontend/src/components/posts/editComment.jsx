@@ -1,5 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
+import UpdateComment from './updateComment';
 
 export default function EditComment(props) {
 
@@ -28,6 +29,7 @@ export default function EditComment(props) {
     return (
         <div className={toEdit()} >
             <button onClick={deleteComment}>Delete Comment</button>
+            <UpdateComment comment2={props.comment1}/>
         </div>
     )
 }

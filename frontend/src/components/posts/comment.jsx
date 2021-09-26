@@ -12,7 +12,7 @@ function Comment (props) {
         <div >
            <div>{props.comment}</div>
            <div><CommentLikes commentId2 = {props.commentId}/></div>
-           <EditComment getComments1 ={props.getComments} commentId3 ={props.commentId} commenter1={props.commenter}/>
+           <EditComment getComments1 ={props.getComments} commentId3 ={props.commentId} commenter1={props.commenter} comment1={props.comment}/>
         </div>
     )
 }

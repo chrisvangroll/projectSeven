@@ -16,8 +16,6 @@ function Modify (props) {
     const [imageUrl, setImageUrl] = useState();
     const [title, setTitle] = useState('');
     
-    console.log(imageUrl)
-
     const setTitleState = (e) =>{
         setTitle(e.target.value);
         //console.log(title)
