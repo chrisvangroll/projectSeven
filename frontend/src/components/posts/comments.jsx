@@ -17,6 +17,7 @@ function Comments (props) {
         }catch(err){
             console.log(err);
         }
+        return 'it worked';
     }
 
     const [comment, setComment] = useState('');
@@ -51,7 +52,7 @@ function Comments (props) {
         <div >
             <h3>Comment Section</h3>
            <div>{comments.map(comment=>(
-                <Comment commentId={comment.id} commenter={comment.commenter} uploadId3={comment.uploadId} comment={comment.comment}/>
+                <Comment getComments = {getComments} commentId={comment.id} commenter={comment.commenter} uploadId3={comment.uploadId} comment={comment.comment}/>
             ))}</div>
             <h3>Post a comment</h3>
             <input type="text" onChange = {logComment}/>

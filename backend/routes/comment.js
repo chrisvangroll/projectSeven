@@ -12,7 +12,7 @@ router.get('/:id/upvote', commentCtrl.getCommentLikes);
 
 router.get('/:id', commentCtrl.getComments)
 
-router.delete('/', commentCtrl.deleteComment);
+router.delete('/:id/remove', commentCtrl.deleteComment);
 
 router.put('/', commentCtrl.updateComment);
 

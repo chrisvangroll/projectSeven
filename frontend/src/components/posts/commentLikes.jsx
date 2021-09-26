@@ -48,7 +48,7 @@ function CommentLikes (props) {
         //    <div>Number of likes = {likes}</div>
         // </div>
         <div>
-            <button onClick={sendLike}>{props.commentId2}</button>
+            <button onClick={sendLike}>Like comment with id {props.commentId2}</button>
             <div>Number of commentlikes = {commentLikes}</div>
         </div>
     )
