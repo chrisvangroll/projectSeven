@@ -9,11 +9,12 @@ function Comment (props) {
     // console.log(getStorage())
     //console.log(props.commenter)
     return(
-        <div >
-           <div>{props.comment}</div>
-           <div><CommentLikes commentId2 = {props.commentId}/></div>
+        <div class= 'd-flex flex-row'>
+            <div class= 'w-75'>{props.comment}</div>
+           <CommentLikes commentId2 = {props.commentId}/>
            <EditComment getComments1 ={props.getComments} commentId3 ={props.commentId} commenter1={props.commenter} comment1={props.comment}/>
         </div>
+       
     )
 }
 

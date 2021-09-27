@@ -22,11 +22,7 @@ export default function UpdateComment(props) {
     //   };
     return (
         <div>
-            <button>Update Comment</button>
-            <div>
-                <input type="text" />
-                <button>Submit Update</button>
-            </div>
+            <button>update</button>
         </div>
     )
 }
