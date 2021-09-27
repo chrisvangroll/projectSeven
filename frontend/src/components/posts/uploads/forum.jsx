@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import Axios from 'axios';
 //import {Link } from 'react-router-dom';
-import Post from './post';
-import Nav from '../../nav/nav';
+import Post from './post.jsx';
+import Nav from '../nav/nav.jsx.js';
 
 function Forum (){
 
@@ -35,11 +35,11 @@ function Forum (){
     return(
         <div>
             <Nav/>
-            <h1 className='text-center'>Forum</h1>
+            <h1 >Forum</h1>
             <br />
-            <main class= 'container d-flex flex-column align-items-center'>{posts.map(post=>(
+            <div>{posts.map(post=>(
                 <Post title={post.title} content={post.content} author={post.author} name={post.name} uploadId={post.id}/>
-            ))}</main>
+            ))}</div>
 
             {/* <button onClick= {getPosts}>click for data</button>
             {displayPosts} */}

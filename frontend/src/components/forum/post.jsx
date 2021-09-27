@@ -1,19 +1,17 @@
 import React from 'react';
 //import MakeComment from './makeComment.jsx';
-import Comments from '../comments/comments';
-import Likes from './likes.jsx';
-import EditPost from './editPost.jsx';
+import Comments from './comments.jsx.js';
+import Likes from './likes.jsx.js';
+import EditPost from './editPost.jsx.js';
 
 function Post (props) {
     
    
     return(
         <div id ={props.uploadId}>
-            <div class='d-flex justify-content-between'>
             <h2>{props.title}</h2>
-            <EditPost author1 = {props.author} uploadId5 = {props.uploadId}/>
-            </div>
             <div>Posted by: {props.name}</div>
+            <EditPost author1 = {props.author} uploadId5 = {props.uploadId}/>
             <img src={props.content} alt="pic" />
             <br />
             <Likes uploadId4 = {props.uploadId}/>

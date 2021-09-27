@@ -6,7 +6,7 @@ import logo from '../../images/icon-left-font-monochrome-black.webp';
 
 function Nav (props) {
     return(
-        <div class="container">
+        <header class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
                     <img class="navbar-brand logo" src= {logo}></img>
@@ -30,13 +30,8 @@ function Nav (props) {
                         </ul>
                     </div>
                 </div>
-        </nav>
-             {/* <nav >
-            <Link className='link' to="/create">Create Post</Link> 
-            <Link className='link' to="/account">Account</Link> 
-            <Link className='link' to="/">Log Out</Link> 
-            </nav> */}
-        </div>
+            </nav>
+        </header>
        
     )
 }

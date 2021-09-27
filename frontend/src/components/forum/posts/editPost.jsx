@@ -17,7 +17,7 @@ function EditPost (props) {
    
     return(
         <div id ={props.uploadId}>
-        <Link  className = {toEdit()} to={{pathname: "/modify", state: {uploadId: props.uploadId5 } }}>Edit post</Link>
+        <Link  className = {toEdit()} to={{pathname: "/modify", state: {uploadId: props.uploadId5 } }}><i class="fas fa-edit"></i></Link>
         </div>
     )
 }
