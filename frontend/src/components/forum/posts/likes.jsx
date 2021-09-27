@@ -42,8 +42,11 @@ function Likes (props) {
 
     return(
         <div >
-            <button onClick={sendLike}>Like</button>
-           <div>Number of likes = {likes}</div>
+            <div class='d-flex mt-2'>
+                <button class='me-1 ' onClick={sendLike}><i class="fas fa-thumbs-up"></i></button>
+                <div>{likes}</div>
+            </div>
+            
         </div>
     )
 }
