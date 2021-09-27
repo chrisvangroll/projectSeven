@@ -8,18 +8,9 @@ export default function EditComment(props) {
     
  //console.log('comment id' +props.commentId3)
 
-    function getStorage(){
-        let userId = localStorage.getItem('id');
-        userId = JSON.parse(userId);
-        return userId;
-    }
-
-   const toEdit = () => props.commenter1 === getStorage() ? "" : "d-none";
     
-    const toggleClass = () =>{
-        document.getElementById(`comment${props.commentId3}`).classList.toggle('d-none');
-        
-    }
+    
+  
     // console.log(props.commenter1)
     // console.log(getStorage())
 
@@ -36,12 +27,11 @@ export default function EditComment(props) {
 
     return (
 
-        // <i class="fas fa-edit"></i>
-        <div className={toEdit()} onClick = {toggleClass} ><i class="fas fa-edit"></i>
-            <div id= {`comment${props.commentId3}`} class='d-none'>
-            <DeleteComment />
-            {/* <button onClick={deleteComment}>Delete Comment</button> */}
-            <UpdateComment  comment2={props.comment1}/>
+        <div id= {`comment${props.commentId3}`} class='d-none'>
+            <div className="d-flex flex-row">
+                <DeleteComment />
+                {/* <button onClick={deleteComment}>Delete Comment</button> */}
+                <UpdateComment  comment2={props.comment1}/>
             </div>
         </div>
     )
