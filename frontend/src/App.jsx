@@ -7,6 +7,7 @@ import MakePost from './components/nav/makePost.jsx';
 import Modify from './components/forum/posts/modify';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+
 function App() {
   return (
     <Router>

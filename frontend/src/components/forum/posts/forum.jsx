@@ -35,7 +35,7 @@ function Forum (){
     return(
         <div>
             <Nav/>
-            <h1 >Forum</h1>
+            <h1 className='text-center'>Forum</h1>
             <br />
             <div>{posts.map(post=>(
                 <Post title={post.title} content={post.content} author={post.author} name={post.name} uploadId={post.id}/>
