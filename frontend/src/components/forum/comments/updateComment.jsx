@@ -23,6 +23,7 @@ export default function UpdateComment(props) {
     return (
         <div>
             <button>update</button>
+            <input type="text" placeholder='existing text'/>
         </div>
     )
 }

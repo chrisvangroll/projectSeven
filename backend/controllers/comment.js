@@ -55,10 +55,13 @@ exports.createComment = (req, res, next) => {
     )}
 
     exports.updateComment = (req, res, next) => {
-        const commentId = req.params.id;
+        const commentId = req.body.id;
+        console.log(commentId);
+        const comment = req.body.comment;
+        console.log(comment)
         const sql = `UPDATE comments
-                     SET comment = 'updated comment'
-                     WHERE comments.id = ${commentId}`;
+                     SET comment = '${comment}'
+                     WHERE comments.id = '${commentId}'`;
         db.query(sql, async (err, results)=> {
             try{
                 const post =await res.send('comment updated1')

@@ -18,10 +18,10 @@ export default function EditComment(props) {
     return (
 
         <div id= {`comment${props.commentId3}`} class='d-none'>
-            <div className="d-flex flex-row">
+            <div className="d-flex flex-row position-absolute">
                 <DeleteComment commentId4 ={props.commentId3} getComments2 ={props.getComments1} />
                 {/* <button onClick={deleteComment}>Delete Comment</button> */}
-                <UpdateComment  comment2={props.comment1}/>
+                {/* <UpdateComment  comment2={props.comment1}/> */}
             </div>
         </div>
     )
