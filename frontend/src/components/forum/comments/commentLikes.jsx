@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Axios from 'axios';
+import ListOfCommentLikers from './listOfCommentLikers';
 
 function CommentLikes (props) {
 
@@ -8,6 +9,7 @@ function CommentLikes (props) {
     }, []);
 
     const [commentLikes, setCommentLikes] = useState([]);
+    const [commentLikers, setCommentLikers] = useState([]);
 
     function getStorage(){
         let userId = localStorage.getItem('id');
@@ -19,7 +21,8 @@ function CommentLikes (props) {
         try{
             const res = await Axios.get('http://localhost:3001/comment/' + props.commentId2 + '/upvote/');
             setCommentLikes(res.data.length); 
-            console.log(res.data)
+            //console.log(res.data)
+            setCommentLikers(res.data)
             //console.log(res.data.length)
             
         }catch(err){
@@ -41,7 +44,9 @@ function CommentLikes (props) {
         getLikes();
        
     }
-
+    const showList = ()=>{
+        document.getElementById(`likes${props.commentId2}`).classList.toggle('d-none');
+    }
     return(
         // <div >
         //     <button onClick={sendLike}>Like</button>
@@ -49,7 +54,10 @@ function CommentLikes (props) {
         // </div>
         <div class = 'd-flex flex-row'>
             <button class='me-1' onClick={sendLike}><i class="fas fa-thumbs-up"></i></button>
-            <div class='me-1'>{commentLikes}</div>
+            <div onClick={showList} class='me-1 numberOfCommentLikes p-2'>{commentLikes}</div>
+            <ul id={`likes${props.commentId2}`} class='d-none'>Liked By:  {commentLikers.map(name=>(
+                <ListOfCommentLikers name={name.name}/>
+            ))}</ul>
         </div>
     )
 }

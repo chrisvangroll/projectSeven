@@ -15,6 +15,10 @@ input {
   z-index: 5;
 }
 
+.numberOfCommentLikes {
+  cursor: pointer;
+}
+
 .likeList {
   background-color: black;
   color: white;

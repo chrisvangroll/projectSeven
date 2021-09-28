@@ -87,8 +87,8 @@ exports.createComment = (req, res, next) => {
       }
 
       exports.getCommentLikes = (req, res, next)=>{
-
-        let sql = `SELECT * FROM comment_likes WHERE commentId = '${req.params.id}'`;
+        let sql = `SELECT users.name FROM comment_likes INNER JOIN users ON comment_likes.userId = users.id WHERE commentId = '${req.params.id}'`;
+        // let sql = `SELECT * FROM comment_likes WHERE commentId = '${req.params.id}'`;
         db.query(sql, async (err, results)=> {
             try{
                 const allPosts = await res.status(200).json(results);

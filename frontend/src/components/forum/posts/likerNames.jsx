@@ -3,7 +3,7 @@ import React from 'react'
 export default function ListOfLikers(props) {
     console.log(props.likers)
     return (
-        <ul id= {`likesFor${props.uploadId11}`} class='d-none d-flex flex-column likeList' >Liked By:
+        <ul id= {`likesFor${props.uploadId11}`} class='d-none d-flex flex-column likeList position-absolute' >Liked By:
            {props.likers.map(name =>(
                <il>{name.name}</il>
            ))}
