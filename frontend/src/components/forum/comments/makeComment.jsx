@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Axios from 'axios';
 
 const MakeComment = (props) =>{
-    console.log('123')
+   
     const [comment, setComment] = useState('');
 
     const logComment = (e) =>{

@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Axios from 'axios';
+import ListOfLikers from './likerNames';
 
 function Likes (props) {
 
@@ -8,6 +9,7 @@ function Likes (props) {
     }, []);
 
     const [likes, setLikes] = useState([]);
+    const [likeNames, setLikeNames] = useState([]);
 
     function getStorage(){
         let userId = localStorage.getItem('id');
@@ -19,7 +21,7 @@ function Likes (props) {
         try{
             const res = await Axios.get('http://localhost:3001/forum/likes/' + props.uploadId4);
             setLikes(res.data.length); 
-            console.log(res)
+            setLikeNames(res.data);
             
         }catch(err){
             console.log(err);
@@ -39,12 +41,15 @@ function Likes (props) {
         }
         getLikes();
     }
-
+    const showNames = () =>{
+        document.getElementById(`likesFor${props.uploadId4}`).classList.toggle('d-none')
+    }
     return(
         <div >
             <div class='d-flex mt-2'>
                 <button class='me-1 ' onClick={sendLike}><i class="fas fa-thumbs-up"></i></button>
-                <div>{likes}</div>
+                <div class='p-2 likeNumber' onMouseEnter={showNames} onMouseLeave={showNames}>{likes}</div>
+                <ListOfLikers uploadId11={props.uploadId4} likers ={likeNames}/>
             </div>
             
         </div>

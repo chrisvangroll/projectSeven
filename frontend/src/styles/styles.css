@@ -15,6 +15,15 @@ input {
   z-index: 5;
 }
 
+.likeList {
+  background-color: black;
+  color: white;
+}
+
+.likeNumber {
+  cursor: pointer;
+}
+
 .editBtn {
   display: none;
 }

@@ -145,8 +145,8 @@ exports.deletePost = (req, res, next) => {
   }
 
   exports.getLikes = (req, res, next)=>{
-
-    let sql = `SELECT * FROM likes WHERE idUpload = '${req.params.id}'`;
+    let sql = `SELECT users.name FROM likes INNER JOIN users ON likes.idUser = users.id WHERE idUpload = '${req.params.id}'`;
+    // let sql = `SELECT * FROM likes WHERE idUpload = '${req.params.id}'`;
     db.query(sql, async (err, results)=> {
         try{
             const allPosts = await res.status(200).json(results);
