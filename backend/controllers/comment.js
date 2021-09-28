@@ -56,9 +56,7 @@ exports.createComment = (req, res, next) => {
 
     exports.updateComment = (req, res, next) => {
         const commentId = req.body.id;
-        console.log(commentId);
         const comment = req.body.comment;
-        console.log(comment)
         const sql = `UPDATE comments
                      SET comment = '${comment}'
                      WHERE comments.id = '${commentId}'`;
