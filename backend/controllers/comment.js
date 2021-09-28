@@ -43,7 +43,7 @@ exports.createComment = (req, res, next) => {
   exports.deleteComment = (req, res, next) => {
     const commentId = req.params.id;
     const sql =    `DELETE from comments
-                    WHERE id = ${commentId}`
+                    WHERE id = '${commentId}'`
     db.query(sql, (err, results)=> {
         if(!err){
             res.send('Comment Deleted');
