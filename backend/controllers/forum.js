@@ -98,32 +98,50 @@ exports.deletePost = (req, res, next) => {
   exports.updatePost = (req, res, next) => {
     //console.log(req.body)
     //console.log(req.file)
-    console.log(req.body)
-    console.log(req.file)
-    const title = req.body.title;
-    const postId = req.params.id;
-    //const content = req.body.content;
-    const url = req.protocol + '://' + req.get('host');
-    const content = url + '/images/' + req.file.filename;
-    //console.log(content[0]);
-    
-    //console.log(req.body.file)
-
-
-    //const author = '2';
-    // const content = 'working on multer2';
-    // const title = 'multer3';
+    // console.log('title' + req.body.title)
+    // console.log('content' + req.body.gif)
    
-    const sql = `UPDATE uploads
-                 SET content = '${content}', title ='${title}'
-                 WHERE uploads.id = '${postId}'`;
-    db.query(sql, async (err, results)=> {
-        try{
-            const post =await res.status(201).json({message: 'updated successfully'});
-        }catch{
-            res.status(400).json({message: err});
-        }
-    })
+    const postId = req.params.id;
+    const title = req.body.title;
+    console.log(!req.file)
+    console.log('title' + req.body.title)
+
+    
+    if(!req.file){
+        const sql = `UPDATE uploads
+        SET title ='${title}'
+        WHERE uploads.id = '${postId}'`;
+
+        db.query(sql, async (err, results)=> {
+            try{
+                const post =await res.status(201).json({message: 'updated successfully'});
+            }catch{
+                res.status(400).json({message: err});
+            }
+        })
+    }
+    else{
+        const url = req.protocol + '://' + req.get('host');
+        const content = url + '/images/' + req.file.filename;
+        const sql = `UPDATE uploads
+        SET content = '${content}', title ='${title}'
+        WHERE uploads.id = '${postId}'`;
+
+        db.query(sql, async (err, results)=> {
+            try{
+                const post =await res.status(201).json({message: 'updated successfully'});
+            }catch{
+                res.status(400).json({message: err});
+            }
+        })
+    }
+
+    // const url = req.protocol + '://' + req.get('host');
+    // const content = url + '/images/' + req.file.filename;
+   
+   
+   
+    
   }
 
   exports.getLikes = (req, res, next)=>{
