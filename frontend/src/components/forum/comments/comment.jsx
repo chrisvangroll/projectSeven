@@ -3,7 +3,7 @@ import CommentLikes from './commentLikes';
 import EditComment from './editComment';
 
 function Comment (props) {
-
+    
     function getStorage(){
         let userId = localStorage.getItem('id');
         userId = JSON.parse(userId);
