@@ -11,6 +11,10 @@ input {
   margin-bottom: 1em;
 }
 
+.deleteAndEditContainer {
+  z-index: 5;
+}
+
 .editBtn {
   display: none;
 }
