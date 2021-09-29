@@ -3,6 +3,8 @@ import React, {useState} from 'react';
 //import './auth.css';
 import Axios from 'axios';
 import {Link } from 'react-router-dom';
+import Logo from '../../images/icon-left-font-monochrome-black.webp'
+
 
 
 function Signup (){
@@ -43,21 +45,30 @@ function Signup (){
         }
       };
     return(
+        <div class='container authContainer d-flex justify-content-center align-items-center'>
         <div>
-            <h1>Sign Up</h1>
+            <img src={Logo} alt="" />
+            <h1 class='text-center fs-2 mb-3'>Welcome Back</h1>
             <form action="">
-                <label htmlFor="name">Name</label>
-                <input type="text" id="name" onChange = {regName}/>
-                <label htmlFor="email">Email</label>
-                <input type="text" id="email" onChange = {regEmail}/>
-                <label htmlFor="password">Password</label>
-                <input type="text" id="password" onChange = {regPassword}/>
+                <input class='w-100' type="text" id="name" placeholder='Name' onChange = {regName}/>
+                <input class='w-100' type="text" id="email" placeholder='Email' onChange = {regEmail}/>
+                <input class='w-100' type="Password" id="password" placeholder='Password' onChange = {regPassword}/>
             </form>
-                <button onClick = {sendSignUpData}>Sign Up</button>
-                <br />
-                <br />
-                <Link to="/">Login</Link>
+            <button class='w-100'onClick = {sendSignUpData}>Sign Up</button>
+                <div class='d-flex mt-3 justify-content-center p-0'>
+                    <div class='me-2'>Already a member?</div>
+                    <Link class="nav-link p-0" to="/">Login</Link> 
+                </div>
+            
+            {/* <h2>{message}</h2> */}
+            <br />
         </div>
+        
+    </div>
+            
+            
+            
+        
     )
 }
 

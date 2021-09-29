@@ -11,6 +11,26 @@ input {
   margin-bottom: 1em;
 }
 
+.authContainer {
+  height: 100vh;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5em 1.5em;
+  background-color: #cfcfcf;
+  text-decoration: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  transition: transform 200ms ease-in-out;
+  border: none;
+}
+.btn:hover {
+  transform: scale(1.1);
+}
+
 .deleteAndEditContainer {
   z-index: 5;
 }

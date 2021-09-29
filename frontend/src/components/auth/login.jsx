@@ -3,6 +3,9 @@ import Axios from 'axios';
 //import '../styles/auth.css';
 //import './auth.css';
 import {Link } from 'react-router-dom';
+import LoginHeader from './LoginHeader';
+import Logo from '../../images/icon-left-font-monochrome-black.webp'
+
 
 function Login (){
 
@@ -57,19 +60,24 @@ function Login (){
 
 
     return(
-        <div>
-            <h1>Login</h1>
-            <form action="">
-                <label htmlFor="email">Email</label>
-                <input type="text" id="email" onChange={logEmail}/>
-                <label htmlFor="password">Password</label>
-                <input type="text" id="password" onChange={logPassword}/>
-            </form>
-            <button onClick={sendLoginData}>Login</button>
-            <br />
-            <h2>{message}</h2>
-            <br />
-            <Link to="/signup">Sign Up</Link> 
+        <div class='container authContainer d-flex justify-content-center align-items-center'>
+            <div>
+                <img src={Logo} alt="" />
+                <h1 class='text-center fs-2 mb-3'>Welcome Back</h1>
+                <form action="">
+                    <input class='w-100' placeholder='Email' type="text" id="email" onChange={logEmail}/>
+                    <input class='w-100' placeholder='Password' type="password" id="password" onChange={logPassword}/>
+                </form>
+                <button class='btn w-100' onClick={sendLoginData}>Login</button>
+                    <div class='d-flex mt-3 justify-content-center p-0'>
+                        <div class='me-2'>New to Groupomania?</div>
+                        <Link class="nav-link p-0" to="/signup">Sign Up</Link> 
+                    </div>
+                
+                <h2>{message}</h2>
+                <br />
+            </div>
+            
         </div>
     )
 }
