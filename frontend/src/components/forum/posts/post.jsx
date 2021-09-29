@@ -13,7 +13,7 @@ function Post (props) {
             <h2>{props.title}</h2>
             <EditPost author1 = {props.author} uploadId5 = {props.uploadId}/>
             </div>
-            <div>Posted by: {props.name}</div>
+            <div>Posted by:.. {props.name}</div>
             <img src={props.content} alt="pic" />
             <br />
             <Likes uploadId4 = {props.uploadId}/>
