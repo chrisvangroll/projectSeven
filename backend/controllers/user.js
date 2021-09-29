@@ -73,10 +73,10 @@ exports.signup =  (req, res, next) =>{
                             userId : results[0].id, 
                             token: token})
                     }else{
-                       res.status(200).json({message: 'email and password do not match'})
+                       res.status(200).json({message: 'Email and password do not match'})
                     }
                  }else{
-                    res.status(206).json({message: 'email does not exist'})
+                    res.status(206).json({message: 'Email does not exist'})
                  }
                 
             }catch{

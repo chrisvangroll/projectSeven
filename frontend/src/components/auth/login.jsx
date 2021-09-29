@@ -38,11 +38,11 @@ function Login (){
             email: email,
             password: password
             });
-               if(res.data.message === 'email does not exist'){
+               if(res.data.message === 'Email does not exist'){
                    getMessage(res.data.message);
                    console.log(res.data.message)
                }
-               if(res.data.message === 'email and password do not match'){
+               if(res.data.message === 'Email and password do not match'){
                 getMessage(res.data.message);
                 console.log(res.data.message)
               }
@@ -61,21 +61,21 @@ function Login (){
 
     return(
         <div class='container authContainer d-flex justify-content-center align-items-center'>
-            <div>
-                <img src={Logo} alt="" />
+            <div class='registrationWrapper'>
+                <img class='authLogo' src={Logo} alt="Groupomania" />
                 <h1 class='text-center fs-2 mb-3'>Welcome Back</h1>
                 <form action="">
                     <input class='w-100' placeholder='Email' type="text" id="email" onChange={logEmail}/>
                     <input class='w-100' placeholder='Password' type="password" id="password" onChange={logPassword}/>
                 </form>
                 <button class='btn w-100' onClick={sendLoginData}>Login</button>
+                
                     <div class='d-flex mt-3 justify-content-center p-0'>
                         <div class='me-2'>New to Groupomania?</div>
                         <Link class="nav-link p-0" to="/signup">Sign Up</Link> 
                     </div>
-                
-                <h2>{message}</h2>
-                <br />
+                    <div class='text-center mt-2 fw-bold errorMessage'>{message}</div>
+                {/* <h2>{message}</h2> */}
             </div>
             
         </div>

@@ -9,6 +9,21 @@ input{
 
 .authContainer{
     height: 100vh;
+
+    .registrationWrapper{
+        @media(max-width: 650px){
+        width: 325px;
+
+        .authLogo{
+            width: 325px;
+        }
+    } 
+}
+    
+}
+.errorMessage{
+    color: red;
+    max-width: 325px;
 }
 
 .btn{
@@ -24,8 +39,4 @@ input{
     //font-weight: var(--fw-bold);
     transition: transform 200ms ease-in-out;
     border: none;
-
-    &:hover{
-        transform: scale(1.1);
-    }
 }
