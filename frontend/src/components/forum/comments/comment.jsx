@@ -59,8 +59,10 @@ const finalToggle = () =>{
     return(
         
         <div class= 'd-flex flex-row flex-wrap position-relative'>
-            <div class= 'w-75'>{props.comment}</div>
-            <div class='w-25 d-flex flex-row'>
+            <div class='d-flex justify-content-center align-items-center'>
+                <div class='comment p-2'>{props.comment}</div>
+            </div>
+            <div class='d-flex flex-column-reverse'>
                 <CommentLikes commentId2 = {props.commentId}/>
                 <div className={toEdit()} onClick = {toggleClass} ><i class="fas fa-edit"></i></div>
             </div>

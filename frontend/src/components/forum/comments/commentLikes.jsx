@@ -53,7 +53,7 @@ function CommentLikes (props) {
         //    <div>Number of likes = {likes}</div>
         // </div>
         <div class = 'd-flex flex-row'>
-            <button class='me-1' onClick={sendLike}><i class="fas fa-thumbs-up"></i></button>
+            <button class='me-1 likeButton' onClick={sendLike}><i class="fas fa-thumbs-up likeIcon"></i></button>
             <div onClick={showList} class='me-1 numberOfCommentLikes p-2'>{commentLikes}</div>
             <ul id={`likes${props.commentId2}`} class='d-none'>Liked By:  {commentLikers.map(name=>(
                 <ListOfCommentLikers name={name.name}/>

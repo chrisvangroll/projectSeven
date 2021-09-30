@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import Comment from './comment.jsx';
 import Axios from 'axios';
 import { Button, Collapse } from 'react-bootstrap';
-import MakeComment from './makeComment.jsx';
+import '../../../../node_modules/bootstrap/dist/css/bootstrap.css';
 
 function Comments (props) {
     const [open, setOpen] = useState(false);
@@ -58,7 +58,7 @@ function Comments (props) {
    
     return(
         <div >
-            <Button
+            <Button className='commentBtn btn mb-3'
         onClick={() => setOpen(!open)}
         aria-controls="example-collapse-text"
         aria-expanded={open}
@@ -72,8 +72,8 @@ function Comments (props) {
       </Collapse>
             {/* <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Comments {comments.length}</button> */}
             <div class= 'd-flex flex-row'>
-                <input class= 'w-75 h-100 addComment' type="text" id={`input${props.uploadId3}`} placeholder= 'Write a comment....' onChange = {logComment}/>
-                <button class= 'w-25' onClick = {sendComment}>Submit</button>
+                <input class= 'w-75 addComment' type="text" id={`input${props.uploadId3}`} placeholder= 'Write a comment....' onChange = {logComment}/>
+                <button class= 'w-25 submitCommentBtn' onClick = {sendComment}>Submit</button>
             </div>
         </div>
     )

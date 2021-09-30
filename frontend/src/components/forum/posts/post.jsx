@@ -8,14 +8,13 @@ function Post (props) {
     
    
     return(
-        <div id ={props.uploadId}>
+        <div class='mb-5' id ={props.uploadId}>
             <div class='d-flex justify-content-between'>
-            <h2>{props.title}</h2>
+            <h2 >{props.title}</h2>
             <EditPost author1 = {props.author} uploadId5 = {props.uploadId}/>
             </div>
-            <div>Posted by:.. {props.name}</div>
-            <img src={props.content} alt="pic" />
-            <br />
+            <div>Posted by {props.name}</div>
+            <img class='gif' src={props.content} alt="pic" />
             <Likes uploadId4 = {props.uploadId}/>
             <Comments uploadId3 = {props.uploadId}/>
             {/* <MakeComment uploadId2= {props.uploadId}/> */}

@@ -49,6 +49,28 @@ input {
   cursor: pointer;
 }
 
+.addComment {
+  height: 35px;
+}
+
+.commentBtn {
+  width: 100%;
+}
+
+.comment {
+  background-color: #c2c2c2;
+  border-radius: 15px;
+}
+
+.submitCommentBtn {
+  height: 35px;
+}
+
+.likeButton {
+  background: transparent;
+  border: none;
+}
+
 .likeList {
   background-color: black;
   color: white;
@@ -56,6 +78,10 @@ input {
 
 .likeNumber {
   cursor: pointer;
+}
+
+.gif {
+  max-width: 450px;
 }
 
 .editBtn {
