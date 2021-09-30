@@ -1,17 +1,44 @@
-import React, {useState} from 'react';
+import React, {useState, useRef, useLayoutEffect} from 'react';
 import CommentLikes from './commentLikes';
 import Axios from 'axios';
 import DeleteComment from './deleteComment';
 
 function Comment (props) {
 
+   
+    // const getElementSize = () =>{
+    //     let box = document.getElementById(`${props.commentId}comment`)
+    //     setCommentWidth(box.clientHeight);
+    //     setCommentHeight(box.clientHeight);
+    // }
+
+    // const boxStyles = {
+    //     width: width,
+    //     height: height
+    // }
+ 
     
-    const [commentEdit, setCommentEdit] = useState('');
-    const [commentEditInput, setCommentEditInput] = useState('');
+
+    const targetRef = useRef();
+  
+    const [dimensions, setDimensions] = useState({width: 0, height: 0});
+    // const [width, setCommentWidth] = useState();
+    // const [height, setCommentHeight] = useState();
+    const [commentEdit, setCommentEdit] = useState(props.comment);
+   // const [commentEditInput, setCommentEditInput] = useState('');
+    //console.log(dimensions)
+    useLayoutEffect(() => {
+        
+          setDimensions({
+            width: targetRef.current.offsetWidth,
+            height: targetRef.current.offsetHeight
+          });
+        
+      }, []);
 
     const logCommentEdit = (e) =>{
         setCommentEdit(e.target.value);
-        setCommentEditInput(e.target.value);
+        //setCommentEditInput(e.target.value);
     }
 
     //console.log(commentEdit)
@@ -41,7 +68,12 @@ function Comment (props) {
    const toEdit = () => props.commenter === getStorage() ? "" : "d-none";
    
    const toggleClass = () =>{
-    document.getElementById(`edit${props.commentId}`).classList.toggle('d-none')
+    document.getElementById(`edit${props.commentId}`).classList.toggle('d-none');
+    setDimensions({
+        width: targetRef.current.offsetWidth,
+        height: targetRef.current.offsetHeight
+      });
+      console.log(dimensions)
 }
 
 const toggleEditBox = () =>{
@@ -53,17 +85,12 @@ const finalToggle = () =>{
     document.getElementById(`editSubmit${props.commentId}`).classList.toggle('d-none')
     document.getElementById(`editBox${props.commentId}`).classList.toggle('d-none')
 }
-  let box = document.getElementById(`${props.commentId}comment`)
-
-  const boxStyle = {
-    width: box.clientWidth,
-    height:box.clientHeight
-  }
+ 
 
     return(
         
         <div class= 'd-flex flex-row commentContainer'>
-            <div id={`${props.commentId}comment`} class='comment position-relative'>{props.comment}</div>
+            <div ref={targetRef} id={`${props.commentId}comment`}  class='comment position-relative'>{props.comment}</div>
             <CommentLikes commentId2 = {props.commentId}/>
            
             <div class='editCommentBtn'  onClick = {toggleClass} >
@@ -75,12 +102,12 @@ const finalToggle = () =>{
                     </div>
                 </div>
             </div>
-            <textarea type="text" style={boxStyle} onChange={logCommentEdit} id={`editBox${props.commentId}`} value={props.comment} class='position-absolute border-5 d-none'/>
+            <textarea type="text" style={dimensions} onChange={logCommentEdit} id={`editBox${props.commentId}`} value={commentEdit} class='position-absolute border-5 d-none'/>
             <div id={`editSubmit${props.commentId}`} class='d-none'>
                 <button onClick={updateComment} >Submit Edit</button>
                 <button onClick={finalToggle}>cancel</button>
             </div>
-            
+            {/* <div>{dimensions.width}</div> */}
 
         </div>
        
