@@ -43,6 +43,8 @@ input {
 
 .deleteAndEditContainer {
   z-index: 5;
+  right: -92px;
+  box-shadow: 0 4px 25px rgba(14, 36, 49, 0.15);
 }
 
 .numberOfCommentLikes {
@@ -70,6 +72,17 @@ input {
   position: relative;
   right: 66px;
   bottom: 13px;
+}
+.editCommentBtn .updateDeleteComment {
+  background-color: white;
+  width: 200px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 5px 0px;
+}
+.editCommentBtn .updateDeleteComment:hover {
+  background-color: #d6d6d6;
 }
 
 .submitCommentBtn {

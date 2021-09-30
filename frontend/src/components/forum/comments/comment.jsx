@@ -65,6 +65,10 @@ const finalToggle = () =>{
             <div class='editCommentBtn'  onClick = {toggleClass} >
                 <div className={toEdit()} >
                     <i class="fas fa-edit"></i>
+                    <div id={`edit${props.commentId}`} class='d-none position-absolute deleteAndEditContainer'>
+                        <DeleteComment getComments1={props.getComments} commentId4={props.commentId}/>
+                        <button class='updateDeleteComment' onClick={toggleEditBox}>Edit Comment</button>
+                    </div>
                 </div>
             </div>
             <input type="text" onChange={logCommentEdit} id={`editBox${props.commentId}`} placeholder={props.comment} class='position-absolute border-5 d-none'/>
@@ -72,10 +76,7 @@ const finalToggle = () =>{
                 <button onClick={updateComment} >Submit Edit</button>
                 <button onClick={finalToggle}>cancel</button>
             </div>
-            <div id={`edit${props.commentId}`} class='d-none position-absolute end-0 top-100 deleteAndEditContainer'>
-                <DeleteComment getComments1={props.getComments} commentId4={props.commentId}/>
-                <button onClick={toggleEditBox}>update</button>
-            </div>
+            
 
         </div>
        

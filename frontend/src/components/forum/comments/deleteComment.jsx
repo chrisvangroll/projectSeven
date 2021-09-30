@@ -15,8 +15,8 @@ export default function DeleteComment(props) {
     }
 
     return (
-        <div>
-            <button onClick={deleteComment}>delete</button>
+        <div >
+            <button class='updateDeleteComment' onClick={deleteComment}>Delete Comment</button>
         </div>
     )
 }
