@@ -53,25 +53,29 @@ const finalToggle = () =>{
     document.getElementById(`editSubmit${props.commentId}`).classList.toggle('d-none')
     document.getElementById(`editBox${props.commentId}`).classList.toggle('d-none')
 }
-    //console.log('commments array' + comments)
-    // console.log(getStorage())
-    //console.log(props.commenter)
+  let box = document.getElementById(`${props.commentId}comment`)
+
+  const boxStyle = {
+    width: box.clientWidth,
+    height:box.clientHeight
+  }
+
     return(
         
         <div class= 'd-flex flex-row commentContainer'>
-            <div class='comment position-relative'>{props.comment}</div>
+            <div id={`${props.commentId}comment`} class='comment position-relative'>{props.comment}</div>
             <CommentLikes commentId2 = {props.commentId}/>
            
             <div class='editCommentBtn'  onClick = {toggleClass} >
                 <div className={toEdit()} >
                     <i class="fas fa-edit"></i>
-                    <div id={`edit${props.commentId}`} class='d-none position-absolute deleteAndEditContainer'>
+                    <div id={`edit${props.commentId}`} class='d-none mt-1 position-absolute deleteAndEditContainer'>
                         <DeleteComment getComments1={props.getComments} commentId4={props.commentId}/>
                         <button class='updateDeleteComment' onClick={toggleEditBox}>Edit Comment</button>
                     </div>
                 </div>
             </div>
-            <input type="text" onChange={logCommentEdit} id={`editBox${props.commentId}`} placeholder={props.comment} class='position-absolute border-5 d-none'/>
+            <textarea type="text" style={boxStyle} onChange={logCommentEdit} id={`editBox${props.commentId}`} value={props.comment} class='position-absolute border-5 d-none'/>
             <div id={`editSubmit${props.commentId}`} class='d-none'>
                 <button onClick={updateComment} >Submit Edit</button>
                 <button onClick={finalToggle}>cancel</button>

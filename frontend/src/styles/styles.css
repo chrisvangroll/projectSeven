@@ -66,12 +66,16 @@ input {
   background-color: #c2c2c2;
   border-radius: 15px;
   padding: 8px 20px 8px 12px;
+  max-width: 500px;
 }
 
 .editCommentBtn {
   position: relative;
   right: 66px;
   bottom: 13px;
+}
+.editCommentBtn .fa-edit {
+  cursor: pointer;
 }
 .editCommentBtn .updateDeleteComment {
   background-color: white;
@@ -101,6 +105,8 @@ input {
   position: relative;
   top: 25px;
   right: 19px;
+  align-self: flex-end;
+  height: 39px;
 }
 
 .likeList {
