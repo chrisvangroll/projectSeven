@@ -14,18 +14,40 @@
     width: 100%;
 }
 
-.comment{
-    background-color: rgb(194, 194, 194);
-    border-radius: 15px;
+.commentContainer{
+    margin-bottom: 30px;
 
+    .comment{
+        background-color: rgb(194, 194, 194);
+        border-radius: 15px;
+        padding: 8px 20px 8px 12px;
+    }
+         
 }
-           
+
+
+
+.editCommentBtn{
+    position: relative;
+    right: 66px;
+    bottom: 13px;
+}
+
 .submitCommentBtn{
     height: 35px;
 }
 
 .likeButton{
-    background: transparent;
+    background:blue;
+    color: white;
     border: none;
+    border-radius: 2em;
+    padding: 0px 5px;
+  
 }
 
+.likeContainer{
+   position: relative;
+   top: 25px;
+   right: 19px;
+}

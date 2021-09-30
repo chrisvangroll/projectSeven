@@ -58,13 +58,14 @@ const finalToggle = () =>{
     //console.log(props.commenter)
     return(
         
-        <div class= 'd-flex flex-row flex-wrap position-relative'>
-            <div class='d-flex justify-content-center align-items-center'>
-                <div class='comment p-2'>{props.comment}</div>
-            </div>
-            <div class='d-flex flex-column-reverse'>
-                <CommentLikes commentId2 = {props.commentId}/>
-                <div className={toEdit()} onClick = {toggleClass} ><i class="fas fa-edit"></i></div>
+        <div class= 'd-flex flex-row commentContainer'>
+            <div class='comment position-relative'>{props.comment}</div>
+            <CommentLikes commentId2 = {props.commentId}/>
+           
+            <div class='editCommentBtn'  onClick = {toggleClass} >
+                <div className={toEdit()} >
+                    <i class="fas fa-edit"></i>
+                </div>
             </div>
             <input type="text" onChange={logCommentEdit} id={`editBox${props.commentId}`} placeholder={props.comment} class='position-absolute border-5 d-none'/>
             <div id={`editSubmit${props.commentId}`} class='d-none'>

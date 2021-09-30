@@ -57,9 +57,19 @@ input {
   width: 100%;
 }
 
-.comment {
+.commentContainer {
+  margin-bottom: 30px;
+}
+.commentContainer .comment {
   background-color: #c2c2c2;
   border-radius: 15px;
+  padding: 8px 20px 8px 12px;
+}
+
+.editCommentBtn {
+  position: relative;
+  right: 66px;
+  bottom: 13px;
 }
 
 .submitCommentBtn {
@@ -67,8 +77,17 @@ input {
 }
 
 .likeButton {
-  background: transparent;
+  background: blue;
+  color: white;
   border: none;
+  border-radius: 2em;
+  padding: 0px 5px;
+}
+
+.likeContainer {
+  position: relative;
+  top: 25px;
+  right: 19px;
 }
 
 .likeList {
