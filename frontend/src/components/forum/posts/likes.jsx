@@ -44,11 +44,17 @@ function Likes (props) {
     const showNames = () =>{
         document.getElementById(`likesFor${props.uploadId4}`).classList.toggle('d-none')
     }
+
+    const numberOfLikes =()=>{
+      return likes == '1' ? `${likes} like` : `${likes} likes`
+    }
+
+
     return(
         <div >
-            <div class='d-flex mt-2 justify-content-between'>
+            <div class='d-flex mt-2 justify-content-between position-relative'>
                 <button class='ms-2 postLikeBtn'  onClick={sendLike}><i class="far fa-heart postLikeBtn "></i></button>
-                <div class='p-2 likeNumber' onMouseEnter={showNames} onMouseLeave={showNames}>{likes}</div>
+                <div class='p-2 likeNumber fw-bold' onMouseEnter={showNames} onMouseLeave={showNames}>{numberOfLikes()}</div>
                 <ListOfLikers uploadId11={props.uploadId4} likers ={likeNames}/>
             </div>
             

@@ -5,8 +5,15 @@
 }
 
 .likeList{
-    background-color: black;
-    color: white;
+    background-color: $accentCyan;
+    color: black;
+    font-weight: bold;
+    z-index: 100;
+    right: -21px;
+    top: 32px;
+    padding: 10px 16px;
+    border-radius: 10px;
+
 }
 
 .likeNumber{
