@@ -4,6 +4,7 @@ import Axios from 'axios';
 import DeleteComment from './deleteComment';
 
 function Comment (props) {
+    
 
     const targetRef = useRef();
     const [dimensions, setDimensions] = useState({width: 0, height: 0});
@@ -53,8 +54,14 @@ function Comment (props) {
         width: targetRef.current.offsetWidth,
         height: targetRef.current.offsetHeight
       });
-     // console.log(dimensions)
 }
+    const handleKeyPress = e => {
+        //it triggers by pressing the enter key
+        console.log(e.key)
+    if (e.key === 'Enter') {
+        updateComment();
+    }
+    };
 
     const toggleEditBox = () =>{
         document.getElementById(`edit${props.commentId}`).classList.toggle('d-none')
@@ -88,7 +95,7 @@ function Comment (props) {
                     </div>
                 </div>
             </div>
-            <textarea resetValue={setCommentEdit} type="text" style={dimensions} onChange={logCommentEdit} id={`editBox${props.commentId}`} value={commentEdit} class='position-absolute d-none'/>
+            <textarea resetValue={setCommentEdit} type="text" style={dimensions} onKeyPress={handleKeyPress} onChange={logCommentEdit} id={`editBox${props.commentId}`} value={commentEdit} class='position-absolute d-none'/>
             <div id={`editSubmit${props.commentId}`} class='d-none'>
                 <button onClick={updateComment} >Submit Edit</button>
                 <button onClick={finalToggle}>cancel</button>
