@@ -55,9 +55,13 @@ function CommentLikes (props) {
         <div id={`commentLikes${props.commentId2}`} class = 'd-flex flex-row likeContainer'>
             <div class = 'd-flex flex-row'>
                 <button class='likeButton' onClick={sendLike}><i class="far fa-heart likeButton"></i></button>
-                <div onClick={showList} class='me-1 numberOfCommentLikes p-2'>{commentLikes}</div>
+                <div onClick={showList} class='me-1 fw-bold numberOfCommentLikes p-2'>{commentLikes}</div>
             </div>
-            <ul id={`likes${props.commentId2}`} class='d-none'>Liked By:  {commentLikers.map(name=>(
+            <ul id={`likes${props.commentId2}`} class='d-none commentLikers'>
+                <div class='mb-2'>
+                    Liked by:
+                </div>
+                 {commentLikers.map(name=>(
                 <ListOfCommentLikers name={name.name}/>
             ))}</ul>
         </div>

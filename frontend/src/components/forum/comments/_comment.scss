@@ -109,3 +109,16 @@
    align-self: flex-end;
    height: 39px;
 }
+
+.commentLikers{
+    position: absolute;
+    top: 31px;
+    z-index: 100;
+    background-color: $accentCyan;
+    font-weight: bold;
+    z-index: 100;
+    padding: 10px 16px;
+    border-radius: 10px;
+    min-width: 100px;
+}
+

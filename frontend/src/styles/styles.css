@@ -140,6 +140,18 @@ input {
   height: 39px;
 }
 
+.commentLikers {
+  position: absolute;
+  top: 31px;
+  z-index: 100;
+  background-color: #36EEE0;
+  font-weight: bold;
+  z-index: 100;
+  padding: 10px 16px;
+  border-radius: 10px;
+  min-width: 100px;
+}
+
 .postContainer {
   background-color: #eeeeee;
   width: 582px;
