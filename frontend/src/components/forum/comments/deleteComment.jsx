@@ -7,7 +7,10 @@ export default function DeleteComment(props) {
         try{
             const res = await Axios.delete('http://localhost:3001/comment/' + props.commentId4 +'/remove/');
             console.log(res);
+           // props.resetValue(props.comment)
             props.getComments1();
+          
+
             //window.location = 'http://localhost:3000/forum'
         }catch(err){
             console.log(err)
