@@ -57,7 +57,7 @@ input {
 }
 
 .commentBtn {
-  width: 582px;
+  width: 592px;
   display: inline-block;
   padding: 0.5em 1.5em;
   background-color: #4C5270;
@@ -78,6 +78,8 @@ input {
   border-radius: 15px;
   padding: 8px 20px 8px 12px;
   max-width: 500px;
+  margin-top: 9px;
+  margin-left: 10px;
 }
 .commentContainer .cancelEdit {
   background: transparent;
@@ -93,7 +95,7 @@ input {
 .editCommentBtn {
   position: relative;
   right: 66px;
-  bottom: 13px;
+  bottom: 5px;
 }
 .editCommentBtn .fa-edit {
   cursor: pointer;
@@ -152,9 +154,14 @@ input {
   min-width: 100px;
 }
 
+.post {
+  box-shadow: 0 4px 25px rgba(14, 36, 49, 0.15);
+  border-radius: 18px 18px 0px 0px;
+}
+
 .postContainer {
   background-color: #eeeeee;
-  width: 582px;
+  width: 592px;
   border-radius: 18px 18px 0px 0px;
 }
 

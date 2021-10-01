@@ -13,7 +13,7 @@
 }
 
 .commentBtn{
-    width: 582px;
+    width: 592px;
     display: inline-block;
     padding: .5em 1.5em;
     background-color: $cornFlower;
@@ -36,6 +36,8 @@
         border-radius: 15px;
         padding: 8px 20px 8px 12px;
         max-width: 500px;
+        margin-top: 9px;
+        margin-left: 10px;
     }
 
     .cancelEdit{
@@ -56,7 +58,7 @@
 .editCommentBtn{
     position: relative;
     right: 66px;
-    bottom: 13px;
+    bottom: 5px;
 
     .fa-edit{
         cursor: pointer;

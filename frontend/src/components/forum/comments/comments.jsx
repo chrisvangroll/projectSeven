@@ -16,11 +16,11 @@ function Comments (props) {
         try{
             const res = await Axios.get('http://localhost:3001/comment/' + props.uploadId3);
             setComments(res.data); 
+            console.log(res.data);
             
         }catch(err){
             console.log(err);
         }
-        return 'it worked';
     }
 
     const [comment, setComment] = useState('');

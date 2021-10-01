@@ -9,7 +9,7 @@ function Post (props) {
     
    
     return(
-        <div class='mb-5' id ={props.uploadId}>
+        <div class='mb-5 post' id ={props.uploadId}>
             <div className="postContainer p-2 position-relative">
                 <div class='d-flex justify-content-center'>
                 <h2 class='mb-0' >{props.title}</h2>
