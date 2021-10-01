@@ -83,7 +83,10 @@ function Comment (props) {
     return(
         
         <div class= 'd-flex flex-row commentContainer'>
-            <div ref={targetRef} id={`${props.commentId}comment`}  class='comment position-relative'>{props.comment}</div>
+            <div ref={targetRef} id={`${props.commentId}comment`}  class='comment position-relative'>
+                {props.comment}
+                <div class='fw-bold'>{`By ${props.name}`}</div>
+            </div>
             <CommentLikes  commentId2 = {props.commentId}/>
            
             <div id={`edit${props.commentId}btn`}class='editCommentBtn'  onClick = {toggleClass} >
