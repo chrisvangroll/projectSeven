@@ -60,7 +60,7 @@ function Comments (props) {
     }
    
     return(
-        <div>
+        <div class= 'allCommentsContainer'>
             <button  class='commentBtn mb-3'
             onClick={toggleClass}
                 >

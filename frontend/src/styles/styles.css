@@ -42,6 +42,10 @@ input {
   border: none;
 }
 
+.allCommentsContainer {
+  box-shadow: 0 4px 25px rgba(14, 36, 49, 0.15);
+}
+
 .deleteAndEditContainer {
   z-index: 5;
   right: -92px;
@@ -155,7 +159,6 @@ input {
 }
 
 .post {
-  box-shadow: 0 4px 25px rgba(14, 36, 49, 0.15);
   border-radius: 18px 18px 0px 0px;
 }
 
