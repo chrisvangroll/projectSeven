@@ -52,7 +52,7 @@ function CommentLikes (props) {
         //     <button onClick={sendLike}>Like</button>
         //    <div>Number of likes = {likes}</div>
         // </div>
-        <div class = 'd-flex flex-row likeContainer'>
+        <div id={`commentLikes${props.commentId2}`} class = 'd-flex flex-row likeContainer'>
             <div class = 'd-flex flex-row'>
                 <button class='likeButton' onClick={sendLike}><i class="far fa-thumbs-up likeButton"></i></button>
                 <div onClick={showList} class='me-1 numberOfCommentLikes p-2'>{commentLikes}</div>
