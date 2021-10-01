@@ -47,7 +47,7 @@ function Likes (props) {
     return(
         <div >
             <div class='d-flex mt-2 justify-content-between'>
-                <button class='me-1 ' onClick={sendLike}><i class="fas fa-thumbs-up"></i></button>
+                <button class='ms-2 postLikeBtn'  onClick={sendLike}><i class="far fa-heart postLikeBtn "></i></button>
                 <div class='p-2 likeNumber' onMouseEnter={showNames} onMouseLeave={showNames}>{likes}</div>
                 <ListOfLikers uploadId11={props.uploadId4} likers ={likeNames}/>
             </div>

@@ -9,24 +9,30 @@
 }
 
 .addComment{
-    height: 35px;
+    height: 39px;
 }
 
 .commentBtn{
     width: 582px;
-    //padding: 80px;
-    //font-size: 49px;
-   // background-color: green;
+    display: inline-block;
+    padding: .5em 1.5em;
+    background-color: $cornFlower;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+   // transition: transform 200ms ease-in-out;
+    border: none;
 }
-.custom-class{
-    background-color: green;
-}
+
 
 .commentContainer{
     margin-bottom: 30px;
 
     .comment{
-        background-color: rgb(194, 194, 194);
+        background-color: $tiffanyBlue;
         border-radius: 15px;
         padding: 8px 20px 8px 12px;
         max-width: 500px;
@@ -54,6 +60,7 @@
 
     .fa-edit{
         cursor: pointer;
+        color: $cornFlower
     }
 
     .updateDeleteComment{
@@ -72,11 +79,22 @@
 }
 
 .submitCommentBtn{
-    height: 35px;
+    //height: 35px;
+    display: inline-block;
+    padding: .5em 1.5em;
+    background-color: $cornFlower;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+   // transition: transform 200ms ease-in-out;
+    border: none;
 }
 
 .likeButton{
-    background:blue;
+    background-color: $hotPink;
     color: white;
     border: none;
     border-radius: 2em;

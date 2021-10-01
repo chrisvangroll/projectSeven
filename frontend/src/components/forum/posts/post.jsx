@@ -10,13 +10,13 @@ function Post (props) {
    
     return(
         <div class='mb-5' id ={props.uploadId}>
-            <div className="postContainer">
-                <div class='d-flex justify-content-between'>
-                <h2 >{props.title}</h2>
+            <div className="postContainer p-2 position-relative">
+                <div class='d-flex justify-content-center'>
+                <h2 class='mb-0' >{props.title}</h2>
                 <EditPost author1 = {props.author} uploadId5 = {props.uploadId}/>
                 </div>
-                <div>Posted by {props.name}</div>
-                <div class='d-flex justify-content-center'>
+                <div class='text-center mb-2'>Posted by {props.name}</div>
+                <div class='d-flex justify-content-center mb-3'>
                     <img class='gif' src={props.content} alt="pic" />
                 </div>
                 <Likes uploadId4 = {props.uploadId}/>

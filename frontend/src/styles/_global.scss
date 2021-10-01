@@ -14,3 +14,19 @@ body {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
   }
+
+  .btn{
+    display: inline-block;
+    padding: .5em 1.5em;
+    background-color: green;
+    //background: var(--clr-accent);
+    background-color: rgb(207, 207, 207);
+    text-decoration: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    //font-weight: var(--fw-bold);
+    transition: transform 200ms ease-in-out;
+    border: none;
+}

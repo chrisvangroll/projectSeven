@@ -16,7 +16,7 @@ function EditPost (props) {
     //console.log(props.uploadId5)
    
     return(
-        <div id ={props.uploadId}>
+        <div class='position-absolute postEditIcon' id ={props.uploadId}>
         <Link  className = {toEdit()} to={{pathname: "/modify", state: {uploadId: props.uploadId5 } }}><i class="fas fa-edit"></i></Link>
         </div>
     )

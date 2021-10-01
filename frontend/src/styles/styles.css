@@ -31,6 +31,7 @@ input {
 .btn {
   display: inline-block;
   padding: 0.5em 1.5em;
+  background-color: #4C5270;
   background-color: #cfcfcf;
   text-decoration: none;
   cursor: pointer;
@@ -52,22 +53,28 @@ input {
 }
 
 .addComment {
-  height: 35px;
+  height: 39px;
 }
 
 .commentBtn {
   width: 582px;
-}
-
-.custom-class {
-  background-color: green;
+  display: inline-block;
+  padding: 0.5em 1.5em;
+  background-color: #4C5270;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  border: none;
 }
 
 .commentContainer {
   margin-bottom: 30px;
 }
 .commentContainer .comment {
-  background-color: #c2c2c2;
+  background-color: #BCECE0;
   border-radius: 15px;
   padding: 8px 20px 8px 12px;
   max-width: 500px;
@@ -90,6 +97,7 @@ input {
 }
 .editCommentBtn .fa-edit {
   cursor: pointer;
+  color: #4C5270;
 }
 .editCommentBtn .updateDeleteComment {
   background-color: white;
@@ -104,11 +112,20 @@ input {
 }
 
 .submitCommentBtn {
-  height: 35px;
+  display: inline-block;
+  padding: 0.5em 1.5em;
+  background-color: #4C5270;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  border: none;
 }
 
 .likeButton {
-  background: blue;
+  background-color: #F652A0;
   color: white;
   border: none;
   border-radius: 2em;
@@ -124,8 +141,9 @@ input {
 }
 
 .postContainer {
-  background-color: #e6e6e6;
+  background-color: #eeeeee;
   width: 582px;
+  border-radius: 18px 18px 0px 0px;
 }
 
 .likeList {
@@ -141,6 +159,22 @@ input {
   max-width: 500px;
 }
 
+.postLikeBtn {
+  background-color: #F652A0;
+  color: white;
+  border: none;
+  border-radius: 2em;
+  padding: 0px 5px;
+}
+
+.fa-edit {
+  color: #4C5270;
+}
+
+.postEditIcon {
+  right: 11px;
+}
+
 .editBtn {
   display: none;
 }
@@ -153,4 +187,18 @@ body {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5em 1.5em;
+  background-color: green;
+  background-color: #cfcfcf;
+  text-decoration: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  transition: transform 200ms ease-in-out;
+  border: none;
 }/*# sourceMappingURL=styles.css.map */

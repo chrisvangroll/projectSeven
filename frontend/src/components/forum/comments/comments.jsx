@@ -60,19 +60,16 @@ function Comments (props) {
     }
    
     return(
-        <div >
-            <button class='commentBtn btn mb-3'
+        <div>
+            <button  class='commentBtn mb-3'
             onClick={toggleClass}
                 >
                 Comments {comments.length}
             </button>
-            {/* {console.log(comments)} */}
             <div id={`commentSection${props.uploadId3}`} class='d-none'>{comments.map(comment=>(
                 <Comment getComments = {getComments} commentId={comment.id} commenter={comment.commenter} uploadId3={comment.uploadId} comment={comment.comment}/>
             ))}</div>
-           
-           
-            {/* <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Comments {comments.length}</button> */}
+        
             <div class= 'd-flex flex-row'>
                 <input class= 'w-75 addComment' type="text" id={`input${props.uploadId3}`} placeholder= 'Write a comment....' onChange = {logComment}/>
                 <button class= 'w-25 submitCommentBtn' onClick = {sendComment}>Submit</button>
