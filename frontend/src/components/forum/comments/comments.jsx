@@ -59,6 +59,7 @@ function Comments (props) {
     return(
         <div >
             <Button className='commentBtn btn mb-3'
+             bsClass='custom-class'
         onClick={() => setOpen(!open)}
         aria-controls="example-collapse-text"
         aria-expanded={open}

@@ -56,7 +56,11 @@ input {
 }
 
 .commentBtn {
-  width: 100%;
+  width: 582px;
+}
+
+.custom-class {
+  background-color: green;
 }
 
 .commentContainer {
@@ -67,6 +71,16 @@ input {
   border-radius: 15px;
   padding: 8px 20px 8px 12px;
   max-width: 500px;
+}
+.commentContainer .cancelEdit {
+  background: transparent;
+  border: none;
+  position: relative;
+  right: 25px;
+  bottom: 5px;
+  color: red;
+  font-size: 18px;
+  padding: 5px 8px;
 }
 
 .editCommentBtn {
@@ -109,6 +123,11 @@ input {
   height: 39px;
 }
 
+.postContainer {
+  background-color: #e6e6e6;
+  width: 582px;
+}
+
 .likeList {
   background-color: black;
   color: white;
@@ -119,7 +138,7 @@ input {
 }
 
 .gif {
-  max-width: 450px;
+  max-width: 500px;
 }
 
 .editBtn {
