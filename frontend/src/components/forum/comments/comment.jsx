@@ -85,8 +85,11 @@ const toggleEditBox = () =>{
    
 }
 const finalToggle = () =>{
+    document.getElementById(`edit${props.commentId}`).classList.toggle('d-none')
     document.getElementById(`editSubmit${props.commentId}`).classList.toggle('d-none')
     document.getElementById(`editBox${props.commentId}`).classList.toggle('d-none')
+    document.getElementById(`edit${props.commentId}btn`).classList.toggle('d-none')
+   document.getElementById(`commentLikes${props.commentId}`).classList.toggle('d-none')
 }
  
 
