@@ -24,6 +24,8 @@
 .fa-bars {
   color: #4C5270;
   font-size: 1.5em;
+  position: relative;
+  top: 6px;
 }
 
 body {
