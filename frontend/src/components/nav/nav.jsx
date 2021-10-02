@@ -33,7 +33,6 @@ function Nav (props) {
                 </div>
             </nav>
         </header>
-       
     )
 }
 
