@@ -51,7 +51,7 @@ function Comment (props) {
    const toggleClass = () =>{
     document.getElementById(`edit${props.commentId}`).classList.toggle('d-none');
     setDimensions({
-        width: targetRef.current.offsetWidth,
+        width: targetRef.current.offsetWidth + 10,
         height: targetRef.current.offsetHeight
       });
 }
