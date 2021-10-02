@@ -86,19 +86,20 @@ function Modify (props) {
     return(
         <div>
             <Nav/>
-            <h2>{post[0].title}</h2>
-            <label htmlFor="title">Modify Title</label>
-            <input type="text" id='title' onChange={setTitleState} />
-            <img src={post[0].content} alt="" />
-            <br />
-            <label htmlFor="file">Upload your file</label>
-            <input type="file" id="file" onChange = {(e) => setImageUrl(e.target.files)}/>
-            <br />
-            <br />
-            <button onClick= {deletePost}>Delete Post</button>
-            <br />
-            <br />
-            <button onClick={updatePost}>Modify Post</button>
+            <div class=' d-flex flex-column align-items-center makePost container mt-5'>
+                <div>
+                    <h2>{post[0].title}</h2>
+                    <label htmlFor="title">Modify Title</label>
+                    <input class='w-100' type="text" id='title' onChange={setTitleState} />
+                    <img class='mt-4 mb-2 modifyImg' src={post[0].content} alt="" />
+                    <label class='d-block mb-2' htmlFor="file">Upload your file</label>
+                    <input class='mb-3' type="file" id="file" onChange = {(e) => setImageUrl(e.target.files)}/>
+                    <button class='me-3 buttonOne' onClick= {deletePost}>Delete Post</button>
+                    <button class='buttonOne' onClick={updatePost}>Modify Post</button>
+                </div>
+                
+            </div>
+           
         </div>
     )
 }

@@ -169,7 +169,7 @@ input {
 }
 
 .postContainer {
-  background-color: #eeeeee;
+  background-color: #bdbdbd21;
   width: 593px;
   border-radius: 18px 18px 0px 0px;
 }
@@ -207,6 +207,10 @@ input {
 
 .postEditIcon {
   right: 11px;
+}
+
+.modifyImg {
+  width: 400px;
 }
 
 .editBtn {
