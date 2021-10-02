@@ -58,7 +58,7 @@ function Comments (props) {
     const toggleCommentSection = () =>{
         document.getElementById(`commentSection${props.uploadId3}`).classList.toggle('d-none');
     }
-   
+ 
     return(
         <div class= 'allCommentsContainer'>
             <button  class='commentBtn mb-3'
@@ -67,7 +67,7 @@ function Comments (props) {
                 Comments {comments.length}
             </button>
             <div id={`commentSection${props.uploadId3}`} class='d-none'>{comments.map(comment=>(
-                <Comment getComments = {getComments} commentId={comment.id} commenter={comment.commenter} uploadId3={comment.uploadId} comment={comment.comment} name={comment.name}/>
+                <Comment getComments = {getComments} commentId={comment.id}  uploadId3={comment.uploadId} comment={comment.comment} name={comment.name} commenter={comment.commenter}/>
             ))}</div>
         
             <div class= 'd-flex flex-row'>

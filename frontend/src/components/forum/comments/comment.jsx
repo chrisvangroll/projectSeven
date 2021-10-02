@@ -98,7 +98,7 @@ function Comment (props) {
                     </div>
                 </div>
             </div>
-            <textarea resetValue={setCommentEdit} type="text" style={dimensions} onKeyPress={handleKeyPress} onChange={logCommentEdit} id={`editBox${props.commentId}`} value={commentEdit} class='position-absolute d-none'/>
+            <textarea resetValue={setCommentEdit} type="text" style={dimensions} onKeyPress={handleKeyPress} onChange={logCommentEdit} id={`editBox${props.commentId}`} value={commentEdit} class='position-absolute d-none editInput'/>
             <div id={`editSubmit${props.commentId}`} class='d-none'>
                 {/* <button onClick={updateComment} >Submit Edit</button> */}
                 <button class= 'cancelEdit fw-bold' onClick={finalToggle}>X</button>
