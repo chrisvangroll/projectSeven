@@ -56,8 +56,6 @@ function Comment (props) {
       });
 }
     const handleKeyPress = e => {
-        //it triggers by pressing the enter key
-        //console.log(e.key)
     if (e.key === 'Enter') {
         updateComment();
     }
@@ -82,7 +80,7 @@ function Comment (props) {
 
     return(
         
-        <div class= 'd-flex flex-row commentContainer'>
+        <div class= 'd-flex flex-row commentContainer position-relative'>
             <div ref={targetRef} id={`${props.commentId}comment`}  class='comment position-relative'>
                 {props.comment}
                 <div class='fw-bold'>{`By ${props.name}`}</div>

@@ -32,6 +32,11 @@ input {
   box-shadow: 0 4px 25px rgba(14, 36, 49, 0.15);
 }
 
+.editInput {
+  top: 9px;
+  left: 10px;
+}
+
 .deleteAndEditContainer {
   z-index: 5;
   right: -92px;
@@ -76,7 +81,7 @@ input {
   border: none;
   position: relative;
   right: 25px;
-  bottom: 5px;
+  bottom: -2px;
   color: red;
   font-size: 18px;
   padding: 5px 8px;
