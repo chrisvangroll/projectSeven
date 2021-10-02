@@ -8,12 +8,24 @@ function EditPost (props) {
 
     function getStorage(){
         let userId = localStorage.getItem('id');
+        let admin = localStorage.getItem('admin');
         userId = JSON.parse(userId);
-        return userId;
+        admin = JSON.parse(admin);
+        let users =[]
+        users.push(admin);
+        users.push(userId);
+        return users;
     }
+    //console.log(getStorage())
+    const toEdit = () =>{
+        if(getStorage()[0] == getStorage()[1]){
+            return ''
+        }else{
+            return props.author1 === getStorage()[1] ? "" : "d-none";
+        }
+        
+    } 
 
-    const toEdit = () => props.author1 === getStorage() ? "" : "editBtn";
-    //console.log(props.uploadId5)
    
     return(
         <div class='position-absolute postEditIcon' id ={props.uploadId}>
