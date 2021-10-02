@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link } from 'react-router-dom';
-import logo from '../../images/icon-left-font-monochrome-black.webp';
+import logo from '../../images/recolored-logo.webp';
 
 
 

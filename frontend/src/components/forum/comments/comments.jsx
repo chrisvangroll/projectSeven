@@ -55,14 +55,14 @@ function Comments (props) {
         }
       };
 
-    const toggleClass = () =>{
+    const toggleCommentSection = () =>{
         document.getElementById(`commentSection${props.uploadId3}`).classList.toggle('d-none');
     }
    
     return(
         <div class= 'allCommentsContainer'>
             <button  class='commentBtn mb-3'
-            onClick={toggleClass}
+            onClick={toggleCommentSection}
                 >
                 Comments {comments.length}
             </button>

@@ -25,11 +25,7 @@ function MakePost (props) {
         formData.append('gif', file[0]);
         formData.append('author', getStorage());
         formData.append('title', title);
-        // const config = {
-        //     headers: {
-        //         'content-type': 'multipart/form-data'
-        //     }
-        // }
+        
         try{
             const res = await Axios.post('http://localhost:3001/forum', formData)
             console.log(res);
@@ -41,15 +37,19 @@ function MakePost (props) {
     return(
         <div>
             <Nav/>
-            <h1>Create Post</h1>
-            <form action="">
-                <label htmlFor="title">Title</label>
-                <input type="text" id="title" onChange = {sendTitle}/>
-                <label htmlFor="file">Upload your file</label>
-                <input type="file" id="file" onChange = {(e) => setFile(e.target.files)}/>
-            </form>
-            <br />
-            <button onClick = {sendPost}>Create Post</button>
+            <div class='d-flex flex-column align-items-center makePost container mt-5'>
+            <div>
+                <h1>Create Post</h1>
+                    <form action="">
+                        <label class='mt-1 mb-1' htmlFor="title">Title</label>
+                        <input class='w-100' type="text" id="title" onChange = {sendTitle}/>
+                        <label class='mt-3 mb-1' htmlFor="file">Upload your file</label>
+                        <input type="file" id="file" onChange = {(e) => setFile(e.target.files)}/>
+                    </form>
+                    <button class='buttonOne mt-3' onClick = {sendPost}>Create Post</button>
+                </div>
+            </div>
+            
         </div>
    
     )

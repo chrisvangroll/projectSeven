@@ -89,7 +89,7 @@ function Comment (props) {
             </div>
             <CommentLikes  commentId2 = {props.commentId}/>
            
-            <div id={`edit${props.commentId}btn`}class='editCommentBtn'  onClick = {toggleClass} >
+            <div id={`edit${props.commentId}btn`} class='editCommentBtn'  onClick = {toggleClass} >
                 <div className={toEdit()} >
                     <i class="fas fa-edit"></i>
                     <div id={`edit${props.commentId}`} class='d-none mt-1 position-absolute deleteAndEditContainer'>

@@ -28,9 +28,13 @@ function Account (){
     return(
         <div>
             <Nav/>
-            <h1>Account</h1>
-            <br />
-            <button onClick = {deleteUser}>Delete Account</button>
+            <div class='d-flex flex-column align-items-center makePost container mt-5'>
+                <div>
+                    <h1 class='text-center'>Account</h1>
+                    <button class='buttonOne mt-3' onClick = {deleteUser}>Delete Account</button>
+                </div>
+            </div>
+
         </div>
     )
 }

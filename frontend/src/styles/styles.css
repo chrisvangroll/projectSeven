@@ -28,20 +28,6 @@ input {
   max-width: 325px;
 }
 
-.btn {
-  display: inline-block;
-  padding: 0.5em 1.5em;
-  background-color: #4C5270;
-  background-color: #cfcfcf;
-  text-decoration: none;
-  cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: bold;
-  transition: transform 200ms ease-in-out;
-  border: none;
-}
-
 .allCommentsContainer {
   box-shadow: 0 4px 25px rgba(14, 36, 49, 0.15);
 }
@@ -217,11 +203,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-.btn {
+.buttonOne {
   display: inline-block;
   padding: 0.5em 1.5em;
-  background-color: green;
-  background-color: #cfcfcf;
+  background-color: #4C5270;
+  color: white;
   text-decoration: none;
   cursor: pointer;
   text-transform: uppercase;
