@@ -7,6 +7,9 @@
     background-color: #bdbdbd21;
     width: 593px;
     border-radius: 18px 18px 0px 0px;
+    @media (max-width: 650px) {
+        width: 100%;
+    }
 }
 
 .likeList{
@@ -27,6 +30,9 @@
 
 .gif{
     max-width: 500px;
+    @media (max-width: 650px) {
+        width: 100%;
+    }
 }
 
 .postLikeBtn{
@@ -46,5 +52,8 @@
 }
 
 .modifyImg{
-    width: 400px
+    width: 400px;
+    @media (max-width: 650px) {
+        width: 100%;
+    }
 }

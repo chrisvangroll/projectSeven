@@ -70,7 +70,7 @@ function Comments (props) {
                 <Comment getComments = {getComments} commentId={comment.id}  uploadId3={comment.uploadId} comment={comment.comment} name={comment.name} commenter={comment.commenter}/>
             ))}</div>
         
-            <div class= 'd-flex flex-row'>
+            <div class= 'd-flex flex-row makeComment'>
                 <input class= 'w-75 addComment' type="text" id={`input${props.uploadId3}`} placeholder= 'Write a comment....' onChange = {logComment}/>
                 <button class= 'w-25 submitCommentBtn' onClick = {sendComment}>Submit</button>
             </div>

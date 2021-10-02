@@ -1,5 +1,6 @@
 .allCommentsContainer{
     box-shadow: 0 4px 25px rgba(14, 36, 49, 0.15);
+    width: 100%;
 }
 
 .editInput{
@@ -35,6 +36,9 @@
     font-weight: bold;
    // transition: transform 200ms ease-in-out;
     border: none;
+    @media (max-width: 650px) {
+        width: 100%;
+    }
 }
 
 
@@ -134,3 +138,6 @@
     min-width: 100px;
 }
 
+.makeComment{
+    width: 100%;
+}

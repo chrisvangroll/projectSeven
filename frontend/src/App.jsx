@@ -14,7 +14,7 @@ function App() {
       <div className="App">
       {/* available for all routes */}
      </div>
-     <div className="content">
+     <div className="content container">
       <Switch>
         <Route exact path="/">
           <Login/>
