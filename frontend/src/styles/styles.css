@@ -2,6 +2,20 @@
   width: 250px;
 }
 
+.navbar {
+  border-bottom: solid 3px #36EEE0;
+}
+.navbar .nav-item:hover {
+  border-bottom: 2px solid #4C5270;
+}
+.navbar .nav-link {
+  color: #4C5270;
+  font-weight: bold;
+}
+.navbar .nav-link:hover {
+  color: #4C5270;
+}
+
 body {
   margin-left: 1em;
 }

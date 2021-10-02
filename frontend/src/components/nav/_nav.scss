@@ -1,3 +1,22 @@
 .logo{
     width: 250px;
 }
+
+.navbar{
+    border-bottom: solid 3px $accentCyan;
+
+    .nav-item{
+        
+        &:hover{
+            border-bottom: 2px solid $cornFlower;
+        }
+    }
+    .nav-link{
+        color: $cornFlower;
+        font-weight: bold;
+
+        &:hover{
+            color: $cornFlower;
+        }
+    }
+}
