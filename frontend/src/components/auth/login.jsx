@@ -26,12 +26,7 @@ function Login (){
         setMessage(message)
     }
 
-    // const sendLoginData = () => {
-    //     const data = { email: email, password: password};
-    //     Axios.post('http://localhost:3001/auth/login', data)
-    //     .then(response => setUserId(response))
-    // }
-    
+
     const sendLoginData = async ()=>{
         try{
             const res = await Axios.post('http://localhost:3001/auth/login',{
