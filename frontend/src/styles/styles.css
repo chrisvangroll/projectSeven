@@ -104,6 +104,11 @@ input {
   }
 }
 
+.commentSection {
+  max-height: 400px;
+  overflow: auto;
+}
+
 .commentContainer {
   margin-bottom: 30px;
 }

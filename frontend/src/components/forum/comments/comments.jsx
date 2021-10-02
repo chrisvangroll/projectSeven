@@ -73,7 +73,7 @@ function Comments (props) {
                 >
                 Comments {`(${comments.length})`}
             </button>
-            <div id={`commentSection${props.uploadId3}`} class='d-none'>{comments.map(comment=>(
+            <div id={`commentSection${props.uploadId3}`} class='d-none commentSection'>{comments.map(comment=>(
                 <Comment getComments = {getComments} commentId={comment.id}  uploadId3={comment.uploadId} comment={comment.comment} name={comment.name} commenter={comment.commenter}/>
             ))}</div>
         
