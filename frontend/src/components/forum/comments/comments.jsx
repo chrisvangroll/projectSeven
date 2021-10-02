@@ -16,7 +16,7 @@ function Comments (props) {
         try{
             const res = await Axios.get('http://localhost:3001/comment/' + props.uploadId3);
             setComments(res.data); 
-            console.log(res.data);
+            //console.log(res.data);
             
         }catch(err){
             console.log(err);
@@ -58,6 +58,13 @@ function Comments (props) {
     const toggleCommentSection = () =>{
         document.getElementById(`commentSection${props.uploadId3}`).classList.toggle('d-none');
     }
+
+    const handleKeyPressComment = e => {
+        console.log(e.key)
+        if (e.key === 'Enter') {
+            sendComment();
+        }
+        };
  
     return(
         <div class= 'allCommentsContainer'>
@@ -71,8 +78,8 @@ function Comments (props) {
             ))}</div>
         
             <div class= 'd-flex flex-row makeComment'>
-                <input class= 'w-75 addComment' type="text" id={`input${props.uploadId3}`} placeholder= 'Write a comment....' onChange = {logComment}/>
-                <button class= 'w-25 submitCommentBtn' onClick = {sendComment}>Submit</button>
+                <input class= 'addComment' type="text" onKeyPress = {handleKeyPressComment} id={`input${props.uploadId3}`} placeholder= 'Write a comment....' onChange = {logComment}/>
+                <button class= 'submitCommentBtn' onClick = {sendComment}>Submit</button>
             </div>
         </div>
     )

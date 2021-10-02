@@ -35,7 +35,7 @@ function Forum (){
     return(
         <div>
             <Nav/>
-            <main class= 'container d-flex flex-column align-items-center mt-5'>{posts.map(post=>(
+            <main class= 'container d-flex flex-column align-items-center mt-5 p-0'>{posts.map(post=>(
                 <Post title={post.title} content={post.content} author={post.author} name={post.name} uploadId={post.id}/>
             ))}</main>
 

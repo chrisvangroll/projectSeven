@@ -21,6 +21,11 @@
 
 .addComment{
     height: 39px;
+    width: 75%;
+
+    @media (max-width: 650px) {
+        width: 100%;
+    }
 }
 
 .commentBtn{
@@ -107,7 +112,12 @@
     font-weight: bold;
    // transition: transform 200ms ease-in-out;
     border: none;
-}
+    width: 25%;
+
+    @media (max-width: 650px) {
+        display: none;
+    }
+    }
 
 .likeButton{
     background-color: $hotPink;
