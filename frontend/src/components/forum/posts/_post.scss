@@ -1,11 +1,16 @@
 .post{
     //box-shadow: 0 4px 25px rgba(14, 36, 49, 0.15);
     border-radius: 18px 18px 0px 0px;
+    width: 501px;
+    @media (max-width: 650px) {
+        width: 100%;   
+    }
+   
 }
 
 .postContainer{
     background-color: #bdbdbd21;
-    width: 593px;
+    width: 501px;
     border-radius: 18px 18px 0px 0px;
     @media (max-width: 650px) {
         width: 100%;
@@ -29,9 +34,10 @@
 }
 
 .gif{
-    max-width: 500px;
+
+    width: 350px;
     @media (max-width: 650px) {
-        width: 100%;
+        width: 95%;
     }
 }
 
