@@ -22,6 +22,17 @@ exports.getAllPosts = (req, res, next)=>{
     })
 }
 
+exports.getAdmin = (req, res, next)=>{
+    let sql = "SELECT * FROM admin";
+    db.query(sql, async (err, results)=> {
+        try{
+            const allPosts = await res.status(200).json(results);
+        }catch{
+            res.status(400).json({message: err});
+        }
+    })
+}
+
 
 
 exports.deletePost = (req, res, next) => {

@@ -8,10 +8,15 @@ function Forum (){
 
     useEffect(() =>{
         getPosts();
+        getAdmin();
     }, []);
     
     const [posts, setPosts] = useState([]);
 
+    function setStorage(value){
+        localStorage.setItem('admin', JSON.stringify(value));
+    }
+   ;
     // function getStorage(){
     //     let userId = localStorage.getItem('id');
     //     userId = JSON.parse(userId);
@@ -19,11 +24,21 @@ function Forum (){
     // }
 
     // const userId =getStorage();
-
+    const getAdmin = async () =>{
+        //console.log('123')
+        try{
+            const res = await Axios.get('http://localhost:3001/forum/admin');
+            //console.log(res.data[0].adminId); 
+            setStorage(res.data[0].adminId);
+            
+        }catch(err){
+            console.log(err);
+        }
+    }
     const getPosts = async ()=>{
         try{
             const res = await Axios.get('http://localhost:3001/forum');
-            console.log(res.data);
+           // console.log(res.data);
             setPosts(res.data.reverse());   
             
         }catch(err){
