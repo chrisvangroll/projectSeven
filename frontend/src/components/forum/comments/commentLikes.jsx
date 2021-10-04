@@ -42,9 +42,9 @@ function CommentLikes (props) {
        
     }
 
-    document.querySelector('body').addEventListener('click', () =>{
-        showList();
-      })
+    // document.querySelector('body').addEventListener('click', () =>{
+    //     showList();
+    //   })
 
     const showList = ()=>{
         document.getElementById(`likes${props.commentId2}`).classList.toggle('d-none');
