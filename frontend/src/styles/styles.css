@@ -51,34 +51,6 @@ input {
   box-shadow: 0 4px 25px rgba(14, 36, 49, 0.15);
   width: 100%;
 }
-.allCommentsContainer .likeContainer {
-  position: relative;
-  top: 25px;
-  right: 19px;
-  align-self: flex-end;
-  height: 39px;
-}
-.allCommentsContainer .likeContainer .likeButton {
-  background-color: #F652A0;
-  color: white;
-  border: none;
-  border-radius: 2em;
-  padding: 0px 5px;
-}
-.allCommentsContainer .likeContainer .numberOfCommentLikes {
-  cursor: pointer;
-}
-.allCommentsContainer .likeContainer .commentLikers {
-  position: absolute;
-  top: 31px;
-  z-index: 100;
-  background-color: #36EEE0;
-  font-weight: bold;
-  z-index: 100;
-  padding: 10px 16px;
-  border-radius: 10px;
-  min-width: 100px;
-}
 .allCommentsContainer .commentBtn {
   width: 500px;
   display: inline-block;
@@ -112,61 +84,6 @@ input {
   margin-top: 9px;
   margin-left: 10px;
 }
-.allCommentsContainer .makeComment {
-  width: 100%;
-}
-.allCommentsContainer .makeComment .addComment {
-  height: 39px;
-  width: 75%;
-}
-@media (max-width: 650px) {
-  .allCommentsContainer .makeComment .addComment {
-    width: 100%;
-  }
-}
-.allCommentsContainer .makeComment .submitCommentBtn {
-  display: inline-block;
-  padding: 0.5em 1.5em;
-  background-color: #4C5270;
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: bold;
-  border: none;
-  width: 25%;
-}
-@media (max-width: 650px) {
-  .allCommentsContainer .makeComment .submitCommentBtn {
-    display: none;
-  }
-}
-.allCommentsContainer .editCommentBtn {
-  position: relative;
-  right: 66px;
-  bottom: 5px;
-}
-.allCommentsContainer .editCommentBtn .fa-edit {
-  cursor: pointer;
-  color: #4C5270;
-}
-.allCommentsContainer .editCommentBtn .deleteAndEditContainer {
-  z-index: 5;
-  right: -92px;
-  box-shadow: 0 4px 25px rgba(14, 36, 49, 0.15);
-}
-.allCommentsContainer .editCommentBtn .deleteAndEditContainer .updateDeleteComment {
-  background-color: white;
-  width: 200px;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-  padding: 5px 0px;
-}
-.allCommentsContainer .editCommentBtn .deleteAndEditContainer .updateDeleteComment:hover {
-  background-color: #d6d6d6;
-}
 .allCommentsContainer .editInput {
   top: 9px;
   left: 10px;
@@ -181,6 +98,92 @@ input {
   color: red;
   font-size: 18px;
   padding: 0px;
+}
+
+.likeContainer {
+  position: relative;
+  top: 25px;
+  right: 19px;
+  align-self: flex-end;
+  height: 39px;
+}
+.likeContainer .likeButton {
+  background-color: #F652A0;
+  color: white;
+  border: none;
+  border-radius: 2em;
+  padding: 0px 5px;
+}
+.likeContainer .numberOfCommentLikes {
+  cursor: pointer;
+}
+.likeContainer .commentLikers {
+  position: absolute;
+  top: 31px;
+  z-index: 100;
+  background-color: #36EEE0;
+  font-weight: bold;
+  z-index: 100;
+  padding: 10px 16px;
+  border-radius: 10px;
+  min-width: 100px;
+}
+
+.editCommentBtn {
+  position: relative;
+  right: 66px;
+  bottom: 5px;
+}
+.editCommentBtn .fa-edit {
+  cursor: pointer;
+  color: #4C5270;
+}
+.editCommentBtn .deleteAndEditContainer {
+  z-index: 5;
+  right: -92px;
+  box-shadow: 0 4px 25px rgba(14, 36, 49, 0.15);
+}
+.editCommentBtn .deleteAndEditContainer .updateDeleteComment {
+  background-color: white;
+  width: 200px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 5px 0px;
+}
+.editCommentBtn .deleteAndEditContainer .updateDeleteComment:hover {
+  background-color: #d6d6d6;
+}
+
+.makeComment {
+  width: 100%;
+}
+.makeComment .addComment {
+  height: 39px;
+  width: 75%;
+}
+@media (max-width: 650px) {
+  .makeComment .addComment {
+    width: 100%;
+  }
+}
+.makeComment .submitCommentBtn {
+  display: inline-block;
+  padding: 0.5em 1.5em;
+  background-color: #4C5270;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  border: none;
+  width: 25%;
+}
+@media (max-width: 650px) {
+  .makeComment .submitCommentBtn {
+    display: none;
+  }
 }
 
 .post {
@@ -268,4 +271,9 @@ code {
   font-weight: bold;
   transition: transform 200ms ease-in-out;
   border: none;
+}
+
+input {
+  display: block;
+  margin-bottom: 1em;
 }/*# sourceMappingURL=styles.css.map */
