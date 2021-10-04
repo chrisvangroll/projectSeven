@@ -27,6 +27,8 @@ db.connect((err)=>{
 //middleware
 app.use(cors());
 
+app.use(helmet());
+
 app.use(bodyParser.json());
 const forumRoutes = require('./routes/forum');
 const userRoutes = require('./routes/user');
