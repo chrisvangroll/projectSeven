@@ -21,10 +21,7 @@ function CommentLikes (props) {
         try{
             const res = await Axios.get('http://localhost:3001/comment/' + props.commentId2 + '/upvote/');
             setCommentLikes(res.data.length); 
-            //console.log(res.data)
             setCommentLikers(res.data)
-            //console.log(res.data.length)
-            
         }catch(err){
             console.log(err);
         }
@@ -44,6 +41,11 @@ function CommentLikes (props) {
         getLikes();
        
     }
+
+    document.querySelector('body').addEventListener('click', () =>{
+        showList();
+      })
+
     const showList = ()=>{
         document.getElementById(`likes${props.commentId2}`).classList.toggle('d-none');
     }

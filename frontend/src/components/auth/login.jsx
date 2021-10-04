@@ -60,10 +60,10 @@ function Login (){
                 <img class='authLogo' src={Logo} alt="Groupomania" />
                 <h1 class='text-center fs-2 mb-3'>Welcome Back</h1>
                 <form action="">
-                    <input class='w-100' placeholder='Email' type="text" id="email" onChange={logEmail}/>
-                    <input class='w-100' placeholder='Password' type="password" id="password" onChange={logPassword}/>
+                    <input class='w-100 mb-3' placeholder='Email' type="email" id="email" onChange={logEmail}/>
+                    <input class='w-100 mb-3' placeholder='Password' type="password" id="password" onChange={logPassword}/>
                 </form>
-                <button class='btn w-100' onClick={sendLoginData}>Login</button>
+                <button class='w-100 buttonOne' onClick={sendLoginData}>Login</button>
                 
                     <div class='d-flex mt-3 justify-content-center p-0'>
                         <div class='me-2'>New to Groupomania?</div>

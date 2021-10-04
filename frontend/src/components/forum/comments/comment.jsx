@@ -9,6 +9,9 @@ function Comment (props) {
     const targetRef = useRef();
     const [dimensions, setDimensions] = useState({width: 0, height: 0});
     const [commentEdit, setCommentEdit] = useState(props.comment);
+   // const [listOpen, setListOpen] = useState(false);
+
+    
   
     useLayoutEffect(() => {
         
