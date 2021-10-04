@@ -1,9 +1,6 @@
 import React, {useState} from 'react';
 import Axios from 'axios';
-//import '../styles/auth.css';
-//import './auth.css';
 import {Link } from 'react-router-dom';
-import LoginHeader from './LoginHeader';
 import Logo from '../../images/icon-left-font-monochrome-black.webp'
 
 

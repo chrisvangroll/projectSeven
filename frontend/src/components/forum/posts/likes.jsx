@@ -46,7 +46,7 @@ function Likes (props) {
     }
 
     const numberOfLikes =()=>{
-      return likes == '1' ? `${likes} like` : `${likes} likes`
+      return likes === '1' ? `${likes} like` : `${likes} likes`
     }
 
 

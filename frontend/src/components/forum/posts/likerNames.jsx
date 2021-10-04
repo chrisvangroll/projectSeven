@@ -11,6 +11,3 @@ export default function ListOfLikers(props) {
         </ul>
     )
 }
-{/* <main class= 'container d-flex flex-column align-items-center'>{posts.map(post=>(
-    <Post title={post.title} content={post.content} author={post.author} name={post.name} uploadId={post.id}/>
-))}</main> */}

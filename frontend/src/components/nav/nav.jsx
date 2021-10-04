@@ -10,7 +10,7 @@ function Nav (props) {
         <header>
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
-                    <img class="navbar-brand logo" src= {logo}></img>
+                    <img class="navbar-brand logo" alt='Groupomania' src= {logo}></img>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-bars navbar-toggler-icon"></i>
                     </button>

@@ -34,7 +34,7 @@ function CommentLikes (props) {
             commentId: props.commentId2 
         }
             );
-        console.log(res);
+        console.log(res.data);
         }catch(err){
             console.log(err);
         }

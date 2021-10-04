@@ -5,7 +5,7 @@ import Axios from 'axios';
 //import '../../../../node_modules/bootstrap/dist/css/bootstrap.css';
 
 function Comments (props) {
-    const [open, setOpen] = useState(false);
+    //const [open, setOpen] = useState(false);
     useEffect(() =>{
         getComments();
     }, []);
@@ -47,7 +47,7 @@ function Comments (props) {
             uploadId: props.uploadId3,
             content : comment
             });
-            console.log(res);
+            console.log(res.data.message);
             getComments();
             clearInputField()
         }catch(err){
@@ -60,7 +60,7 @@ function Comments (props) {
     }
 
     const handleKeyPressComment = e => {
-        console.log(e.key)
+        //console.log(e.key)
         if (e.key === 'Enter') {
             sendComment();
         }

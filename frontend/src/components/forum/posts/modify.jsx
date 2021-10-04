@@ -6,7 +6,6 @@ import Axios from 'axios';
 
 
 function Modify (props) {
-    let test = 'test';
     const location = useLocation();
     const uploadId = location.state?.uploadId;
 
@@ -61,11 +60,11 @@ function Modify (props) {
         const formData = new FormData();
         formData.append('gif', imageUrl[0]);
         formData.append('title', title);
-        const config = {
-            headers: {
-                'content-type': 'multipart/form-data'
-            }
-        }
+        // const config = {
+        //     headers: {
+        //         'content-type': 'multipart/form-data'
+        //     }
+        // }
         try{
             const res = await Axios.put('http://localhost:3001/forum/' + post[0].id, formData)
             console.log(res);

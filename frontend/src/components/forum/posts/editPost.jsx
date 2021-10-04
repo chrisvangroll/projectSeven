@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Link } from 'react-router-dom';
 
 function EditPost (props) {
 
-    const [uploadId, setId] = useState(props.uploadId5);
+   // const [uploadId, setId] = useState(props.uploadId5);
 
 
     function getStorage(){
@@ -18,7 +18,7 @@ function EditPost (props) {
     }
     //console.log(getStorage())
     const toEdit = () =>{
-        if(getStorage()[0] == getStorage()[1]){
+        if(getStorage()[0] === getStorage()[1]){
             return ''
         }else{
             return props.author1 === getStorage()[1] ? "" : "d-none";

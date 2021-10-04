@@ -12,9 +12,6 @@ exports.createComment = (req, res, next) => {
     const commenter = req.body.userId;
     const uploadId = req.body.uploadId;
     const comment = req.body.content;
-    // const commenter = '38';
-    // const uploadId = '29';
-    // const comment = 'good post';
     
     const sql = `INSERT INTO comments (commenter, uploadId, comment)
                 VALUES ('${commenter}', ${uploadId}, '${comment}')`;
@@ -73,8 +70,7 @@ exports.createComment = (req, res, next) => {
        
         const commentId = req.body.commentId;
         const userId = req.body.userId;
-        // const commentId = '6';
-        // const userId = '6';
+
         const sql = `INSERT INTO comment_likes (userId, commentId, liked)
                     VALUES (${userId}, ${commentId}, '1')`;
         db.query(sql, async (err, results)=> {

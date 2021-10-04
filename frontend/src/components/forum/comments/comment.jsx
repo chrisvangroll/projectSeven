@@ -56,7 +56,7 @@ function Comment (props) {
 
   // const toEdit = () => props.commenter === getStorage() ? "" : "d-none";
   const toEdit = () =>{
-    if(getStorage()[0] == getStorage()[1]){
+    if(getStorage()[0] === getStorage()[1]){
         return ''
     }else{
         return props.commenter === getStorage()[1] ? "" : "d-none";
