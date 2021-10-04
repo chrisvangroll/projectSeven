@@ -51,34 +51,35 @@ input {
   box-shadow: 0 4px 25px rgba(14, 36, 49, 0.15);
   width: 100%;
 }
-
-.editInput {
-  top: 9px;
-  left: 10px;
-  padding-top: 18px;
+.allCommentsContainer .likeContainer {
+  position: relative;
+  top: 25px;
+  right: 19px;
+  align-self: flex-end;
+  height: 39px;
 }
-
-.deleteAndEditContainer {
-  z-index: 5;
-  right: -92px;
-  box-shadow: 0 4px 25px rgba(14, 36, 49, 0.15);
+.allCommentsContainer .likeContainer .likeButton {
+  background-color: #F652A0;
+  color: white;
+  border: none;
+  border-radius: 2em;
+  padding: 0px 5px;
 }
-
-.numberOfCommentLikes {
+.allCommentsContainer .likeContainer .numberOfCommentLikes {
   cursor: pointer;
 }
-
-.addComment {
-  height: 39px;
-  width: 75%;
+.allCommentsContainer .likeContainer .commentLikers {
+  position: absolute;
+  top: 31px;
+  z-index: 100;
+  background-color: #36EEE0;
+  font-weight: bold;
+  z-index: 100;
+  padding: 10px 16px;
+  border-radius: 10px;
+  min-width: 100px;
 }
-@media (max-width: 650px) {
-  .addComment {
-    width: 100%;
-  }
-}
-
-.commentBtn {
+.allCommentsContainer .commentBtn {
   width: 500px;
   display: inline-block;
   padding: 0.5em 1.5em;
@@ -92,20 +93,18 @@ input {
   border: none;
 }
 @media (max-width: 650px) {
-  .commentBtn {
+  .allCommentsContainer .commentBtn {
     width: 100%;
   }
 }
-
-.commentSection {
+.allCommentsContainer .commentSection {
   max-height: 500px;
   overflow: auto;
 }
-
-.commentContainer {
+.allCommentsContainer .commentSection .commentContainer {
   margin-bottom: 30px;
 }
-.commentContainer .comment {
+.allCommentsContainer .commentSection .commentContainer .comment {
   background-color: #BCECE0;
   border-radius: 15px;
   padding: 8px 20px 8px 12px;
@@ -113,39 +112,19 @@ input {
   margin-top: 9px;
   margin-left: 10px;
 }
-.commentContainer .cancelEdit {
-  background: transparent;
-  border: none;
-  position: relative;
-  right: 7px;
-  bottom: -7px;
-  color: red;
-  font-size: 18px;
-  padding: 0px;
+.allCommentsContainer .makeComment {
+  width: 100%;
 }
-
-.editCommentBtn {
-  position: relative;
-  right: 66px;
-  bottom: 5px;
+.allCommentsContainer .makeComment .addComment {
+  height: 39px;
+  width: 75%;
 }
-.editCommentBtn .fa-edit {
-  cursor: pointer;
-  color: #4C5270;
+@media (max-width: 650px) {
+  .allCommentsContainer .makeComment .addComment {
+    width: 100%;
+  }
 }
-.editCommentBtn .updateDeleteComment {
-  background-color: white;
-  width: 200px;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-  padding: 5px 0px;
-}
-.editCommentBtn .updateDeleteComment:hover {
-  background-color: #d6d6d6;
-}
-
-.submitCommentBtn {
+.allCommentsContainer .makeComment .submitCommentBtn {
   display: inline-block;
   padding: 0.5em 1.5em;
   background-color: #4C5270;
@@ -159,41 +138,49 @@ input {
   width: 25%;
 }
 @media (max-width: 650px) {
-  .submitCommentBtn {
+  .allCommentsContainer .makeComment .submitCommentBtn {
     display: none;
   }
 }
-
-.likeButton {
-  background-color: #F652A0;
-  color: white;
-  border: none;
-  border-radius: 2em;
-  padding: 0px 5px;
-}
-
-.likeContainer {
+.allCommentsContainer .editCommentBtn {
   position: relative;
-  top: 25px;
-  right: 19px;
-  align-self: flex-end;
-  height: 39px;
+  right: 66px;
+  bottom: 5px;
 }
-
-.commentLikers {
-  position: absolute;
-  top: 31px;
-  z-index: 100;
-  background-color: #36EEE0;
+.allCommentsContainer .editCommentBtn .fa-edit {
+  cursor: pointer;
+  color: #4C5270;
+}
+.allCommentsContainer .editCommentBtn .deleteAndEditContainer {
+  z-index: 5;
+  right: -92px;
+  box-shadow: 0 4px 25px rgba(14, 36, 49, 0.15);
+}
+.allCommentsContainer .editCommentBtn .deleteAndEditContainer .updateDeleteComment {
+  background-color: white;
+  width: 200px;
+  border: none;
   font-weight: bold;
-  z-index: 100;
-  padding: 10px 16px;
-  border-radius: 10px;
-  min-width: 100px;
+  cursor: pointer;
+  padding: 5px 0px;
 }
-
-.makeComment {
-  width: 100%;
+.allCommentsContainer .editCommentBtn .deleteAndEditContainer .updateDeleteComment:hover {
+  background-color: #d6d6d6;
+}
+.allCommentsContainer .editInput {
+  top: 9px;
+  left: 10px;
+  padding-top: 18px;
+}
+.allCommentsContainer .cancelEdit {
+  background: transparent;
+  border: none;
+  position: relative;
+  right: 7px;
+  bottom: -7px;
+  color: red;
+  font-size: 18px;
+  padding: 0px;
 }
 
 .post {
