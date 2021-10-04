@@ -26,6 +26,11 @@
   color: #4C5270;
 }
 
+input {
+  display: block;
+  margin-bottom: 1em;
+}
+
 .authContainer {
   height: 100vh;
 }
@@ -200,19 +205,27 @@
     width: 100%;
   }
 }
-
-.postContainer {
+.post .postContainer {
   background-color: #bdbdbd21;
   width: 501px;
   border-radius: 18px 18px 0px 0px;
 }
 @media (max-width: 650px) {
-  .postContainer {
+  .post .postContainer {
     width: 100%;
   }
 }
-
-.likeList {
+.post .postContainer .postLikeBtn {
+  background-color: #F652A0;
+  color: white;
+  border: none;
+  border-radius: 2em;
+  padding: 0px 5px;
+}
+.post .postContainer .likeNumber {
+  cursor: pointer;
+}
+.post .postContainer .likeList {
   background-color: #36EEE0;
   color: black;
   font-weight: bold;
@@ -222,42 +235,26 @@
   padding: 10px 16px;
   border-radius: 10px;
 }
-
-.likeNumber {
-  cursor: pointer;
-}
-
-.gif {
-  width: 350px;
-}
-@media (max-width: 650px) {
-  .gif {
-    width: 95%;
-  }
-}
-
-.postLikeBtn {
-  background-color: #F652A0;
-  color: white;
-  border: none;
-  border-radius: 2em;
-  padding: 0px 5px;
-}
-
-.fa-edit {
-  color: #4C5270;
-}
-
-.postEditIcon {
+.post .postContainer .postEditIcon {
   right: 11px;
 }
-
-.modifyImg {
+.post .postContainer .postEditIcon .fa-edit {
+  color: #4C5270;
+}
+.post .postContainer .postEditIcon .modifyImg {
   width: 400px;
 }
 @media (max-width: 650px) {
-  .modifyImg {
+  .post .postContainer .postEditIcon .modifyImg {
     width: 100%;
+  }
+}
+.post .postContainer .gif {
+  width: 350px;
+}
+@media (max-width: 650px) {
+  .post .postContainer .gif {
+    width: 95%;
   }
 }
 
@@ -265,6 +262,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin-left: 1em;
 }
 
 code {
