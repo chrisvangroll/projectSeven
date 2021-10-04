@@ -26,8 +26,13 @@ function Comment (props) {
 
     function getStorage(){
         let userId = localStorage.getItem('id');
+        let admin = localStorage.getItem('admin');
         userId = JSON.parse(userId);
-        return userId;
+        admin = JSON.parse(admin);
+        let users =[]
+        users.push(admin);
+        users.push(userId);
+        return users;
     }
 
     const updateComment = async ()=>{
@@ -46,8 +51,15 @@ function Comment (props) {
         }
       };
 
-   const toEdit = () => props.commenter === getStorage() ? "" : "d-none";
-   
+  // const toEdit = () => props.commenter === getStorage() ? "" : "d-none";
+  const toEdit = () =>{
+    if(getStorage()[0] == getStorage()[1]){
+        return ''
+    }else{
+        return props.commenter === getStorage()[1] ? "" : "d-none";
+    }
+    
+} 
    const toggleClass = () =>{
     document.getElementById(`edit${props.commentId}`).classList.toggle('d-none');
     setDimensions({
