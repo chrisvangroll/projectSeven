@@ -1,10 +1,10 @@
-body{
-    margin-left: 1em;
-}
-input{
-    display: block;
-    margin-bottom: 1em;
-}
+// body{
+//     margin-left: 1em;
+// }
+// input{
+//     display: block;
+//     margin-bottom: 1em;
+// }
 
 .authContainer{
     height: 100vh;
@@ -17,11 +17,12 @@ input{
             width: 325px;
         }
     } 
+    .errorMessage{
+        color: red;
+        max-width: 325px;
+    }
 }
     
 }
-.errorMessage{
-    color: red;
-    max-width: 325px;
-}
+
 

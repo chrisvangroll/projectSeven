@@ -1,14 +1,19 @@
-.logo {
+.navbar {
+  border-bottom: solid 3px #36EEE0;
+}
+.navbar .logo {
   width: 250px;
 }
 @media (max-width: 600px) {
-  .logo {
-    width: 150px;
+  .navbar .logo {
+    width: 180px;
   }
 }
-
-.navbar {
-  border-bottom: solid 3px #36EEE0;
+.navbar .fa-bars {
+  color: #4C5270;
+  font-size: 1.5em;
+  position: relative;
+  top: 6px;
 }
 .navbar .nav-item:hover {
   border-bottom: 2px solid #4C5270;
@@ -19,22 +24,6 @@
 }
 .navbar .nav-link:hover {
   color: #4C5270;
-}
-
-.fa-bars {
-  color: #4C5270;
-  font-size: 1.5em;
-  position: relative;
-  top: 6px;
-}
-
-body {
-  margin-left: 1em;
-}
-
-input {
-  display: block;
-  margin-bottom: 1em;
 }
 
 .authContainer {
@@ -48,8 +37,7 @@ input {
     width: 325px;
   }
 }
-
-.errorMessage {
+.authContainer .registrationWrapper .errorMessage {
   color: red;
   max-width: 325px;
 }
@@ -271,10 +259,6 @@ input {
   .modifyImg {
     width: 100%;
   }
-}
-
-.editBtn {
-  display: none;
 }
 
 body {

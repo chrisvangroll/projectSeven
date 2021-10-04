@@ -1,13 +1,20 @@
-.logo{
-    width: 250px;
-
-    @media (max-width: 600px) {
-        width: 150px;
-    }
-}
-
 .navbar{
     border-bottom: solid 3px $accentCyan;
+
+    .logo{
+        width: 250px;
+    
+        @media (max-width: 600px) {
+            width: 180px;
+        }
+    }
+
+    .fa-bars{
+        color: $cornFlower;
+        font-size: 1.5em;
+        position: relative;
+        top: 6px;
+    }
 
     .nav-item{
         
@@ -25,9 +32,3 @@
     }
 }
 
-.fa-bars{
-    color: $cornFlower;
-    font-size: 1.5em;
-    position: relative;
-    top: 6px;
-}

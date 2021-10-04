@@ -70,7 +70,6 @@ function Login (){
                         <Link class="nav-link p-0" to="/signup">Sign Up</Link> 
                     </div>
                     <div class='text-center mt-2 fw-bold errorMessage'>{message}</div>
-                {/* <h2>{message}</h2> */}
             </div>
             
         </div>
