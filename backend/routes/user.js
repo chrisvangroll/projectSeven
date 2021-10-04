@@ -5,8 +5,8 @@ const bouncer = require('express-bouncer')(500, 900000);
 const verifyPassword = require('../middleware/verifyPassword')
 
 router.post('/signup', verifyPassword, userCtrl.signup);
-// router.post('/login', bouncer.block, userCtrl.login);
-router.post('/login', userCtrl.login);
+router.post('/login', bouncer.block, userCtrl.login);
+//router.post('/login', userCtrl.login);
 router.delete('/delete', userCtrl.deleteUser )
 
 module.exports = router;
