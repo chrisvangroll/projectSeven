@@ -26,6 +26,11 @@ function Modify (props) {
    
 
     const getPost = async ()=>{
+        let config = {
+            headers : {
+                Authorization: JSON.parse(localStorage.getItem('token')) 
+            } 
+        }
         try{
             const res = await Axios.get('http://localhost:3001/forum/' + uploadId + '/post');
             setPost(res.data);

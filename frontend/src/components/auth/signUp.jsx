@@ -82,10 +82,10 @@ function Signup (){
             <img class='authLogo' src={Logo} alt="" />
             <h1 class='text-center fs-2 mb-3'>Sign Up</h1>
             <form action="">
-                <input class='w-100 mb-3' type="text" id="name" placeholder='Name' onChange = {regName}/>
-                <input class='w-100 mb-3' type="email" id="email" placeholder='Email' onChange = {regEmail}/>
-                <input class='w-100 mb-3' type="Password" id="password" placeholder='Password' onChange = {regPassword}/>
-                <input class='w-100 mb-3' type="Password" id="confirmPassword" placeholder='Confirm Password' onChange = {regConfirmPassword}/>
+                <input class='w-100 mb-3' title='name' type="text" id="name" placeholder='Name' onChange = {regName}/>
+                <input class='w-100 mb-3' title ='email' type="email" id="email" placeholder='Email' onChange = {regEmail}/>
+                <input class='w-100 mb-3' title='password' type="Password" id="password" placeholder='Password' onChange = {regPassword}/>
+                <input class='w-100 mb-3' title='confirm password' type="Password" id="confirmPassword" placeholder='Confirm Password' onChange = {regConfirmPassword}/>
             </form>
             <button class='w-100 buttonOne' onClick = {validateFormData}>Sign Up</button>
                 <div class='d-flex mt-3 justify-content-center p-0'>

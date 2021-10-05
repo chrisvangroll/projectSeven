@@ -78,7 +78,7 @@ function Comments (props) {
             ))}</div>
         
             <div class= 'd-flex flex-row makeComment'>
-                <input class= 'addComment' type="text" onKeyPress = {handleKeyPressComment} id={`input${props.uploadId3}`} placeholder= 'Write a comment....' onChange = {logComment}/>
+                <input class= 'addComment' title='make a comment' type="text" onKeyPress = {handleKeyPressComment} id={`input${props.uploadId3}`} placeholder= 'Write a comment....' onChange = {logComment}/>
                 <button class= 'submitCommentBtn' onClick = {sendComment}>Submit</button>
             </div>
         </div>

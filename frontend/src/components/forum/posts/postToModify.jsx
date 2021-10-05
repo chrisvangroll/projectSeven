@@ -1,9 +1,6 @@
 import React from 'react';
 
 function PostToModify (props) {
-
-   
-   
     return(
         <div>
             <div> modify post</div>

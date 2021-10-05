@@ -56,7 +56,7 @@ function CommentLikes (props) {
         // </div>
         <div id={`commentLikes${props.commentId2}`} class = 'd-flex flex-row likeContainer'>
             <div class = 'd-flex flex-row'>
-                <button class='likeButton' onClick={sendLike}><i class="far fa-heart likeButton"></i></button>
+                <div class='likeButton d-flex align-items-center' onClick={sendLike}><i class="far fa-heart likeButton"></i></div>
                 <div onClick={showList} class='me-1 fw-bold numberOfCommentLikes p-2'>{commentLikes}</div>
             </div>
             <ul id={`likes${props.commentId2}`} class='d-none d-flex flex-column commentLikers'>

@@ -91,6 +91,13 @@ function Comment (props) {
         document.getElementById(`edit${props.commentId}btn`).classList.toggle('d-none')
         document.getElementById(`commentLikes${props.commentId}`).classList.toggle('d-none')
     }
+
+    // document.querySelector('body').addEventListener('click', ()=> {
+    //   //console.log('event listener works') ;
+    //   //console.log(document.getElementById(`edit${props.commentId}`))
+    //   document.getElementById(`edit${props.commentId}`).classList.toggle('d-none') 
+
+    // })
  
 
     return(
@@ -111,7 +118,7 @@ function Comment (props) {
                     </div>
                 </div>
             </div>
-            <textarea resetValue={setCommentEdit} type="text" style={dimensions} onKeyPress={handleKeyPress} onChange={logCommentEdit} id={`editBox${props.commentId}`} value={commentEdit} class='position-absolute d-none editInput'/>
+            <textarea resetValue={setCommentEdit} type="text" title='update comment' style={dimensions} onKeyPress={handleKeyPress} onChange={logCommentEdit} id={`editBox${props.commentId}`} value={commentEdit} class='position-absolute d-none editInput'/>
             <div id={`editSubmit${props.commentId}`} class='d-none'>
                 {/* <button onClick={updateComment} >Submit Edit</button> */}
                 <button class= 'cancelEdit fw-bold' onClick={finalToggle}>X</button>

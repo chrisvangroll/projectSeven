@@ -39,10 +39,11 @@ function Login (){
                 console.log(res.data.message)
               }
               if(res.data.message === 'login successful'){
-                function setStorage(value){
-                    localStorage.setItem('id', JSON.stringify(value));
+                function setStorage(id, token){
+                    localStorage.setItem('id', JSON.stringify(id));
+                    localStorage.setItem('token', JSON.stringify(token));
                 }
-                setStorage(res.data.userId);
+                setStorage(res.data.userId, res.data.token);
                 window.location = 'http://localhost:3000/forum'
               }
         }catch(err){
@@ -57,8 +58,8 @@ function Login (){
                 <img class='authLogo' src={Logo} alt="Groupomania" />
                 <h1 class='text-center fs-2 mb-3'>Welcome Back</h1>
                 <form action="">
-                    <input class='w-100 mb-3' placeholder='Email' type="email" id="email" onChange={logEmail}/>
-                    <input class='w-100 mb-3' placeholder='Password' type="password" id="password" onChange={logPassword}/>
+                    <input class='w-100 mb-3' title='email' placeholder='Email' type="email" id="email" onChange={logEmail}/>
+                    <input class='w-100 mb-3' title='password' placeholder='Password' type="password" id="password" onChange={logPassword}/>
                 </form>
                 <button class='w-100 buttonOne' onClick={sendLoginData}>Login</button>
                 

@@ -27,6 +27,11 @@ function MakePost (props) {
         formData.append('title', title);
         
         try{
+            let config = {
+                headers : {
+                    Authorization: JSON.parse(localStorage.getItem('token')) 
+                } 
+            }
             const res = await Axios.post('http://localhost:3001/forum', formData)
             console.log(res);
             window.location = 'http://localhost:3000/forum';

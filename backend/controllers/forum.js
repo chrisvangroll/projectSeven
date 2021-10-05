@@ -12,6 +12,8 @@ const db = mysql.createConnection({
     })
 
 exports.getAllPosts = (req, res, next)=>{
+   // console.log(req.headers.authorization)
+   // console.log('abc')
     let sql = "SELECT uploads.content, uploads.id, uploads.author, uploads.id, uploads.title, users.name FROM uploads INNER JOIN users ON uploads.author = users.id ";
     db.query(sql, async (err, results)=> {
         try{
@@ -73,7 +75,8 @@ exports.deletePost = (req, res, next) => {
     //const author = '2';
     // const content = 'working on multer2';
     //const title = 'multer3';
-    console.log(req.file)
+    //console.log(req.file)
+    console.log(req)
     const url = req.protocol + '://' + req.get('host');
     const content = url + '/images/' + req.file.filename;
 

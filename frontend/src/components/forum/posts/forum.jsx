@@ -25,7 +25,7 @@ function Forum (){
 
     // const userId =getStorage();
     const getAdmin = async () =>{
-        //console.log('123')
+        
         try{
             const res = await Axios.get('http://localhost:3001/forum/admin');
             //console.log(res.data[0].adminId); 
@@ -36,8 +36,18 @@ function Forum (){
         }
     }
     const getPosts = async ()=>{
+        let config = {
+            headers : {
+                Authorization: JSON.parse(localStorage.getItem('token')) 
+            } 
+        }
+        //console.log(config.headers.authorization)
         try{
-            const res = await Axios.get('http://localhost:3001/forum');
+            const res = await Axios.get('http://localhost:3001/forum', config 
+                // headers : {
+                //     authorization: JSON.parse(localStorage.getItem('token')) 
+                // } 
+            );
            // console.log(res.data);
             setPosts(res.data.reverse());   
             

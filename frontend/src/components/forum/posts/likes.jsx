@@ -18,8 +18,13 @@ function Likes (props) {
     }
 
     const getLikes = async ()=>{
+        let config = {
+            headers : {
+                Authorization: JSON.parse(localStorage.getItem('token')) 
+            } 
+        }
         try{
-            const res = await Axios.get('http://localhost:3001/forum/likes/' + props.uploadId4);
+            const res = await Axios.get('http://localhost:3001/forum/likes/' + props.uploadId4, config);
             setLikes(res.data.length); 
             setLikeNames(res.data);
             
@@ -29,8 +34,13 @@ function Likes (props) {
     }
   
     const sendLike = async ()=>{
+        let config = {
+            headers : {
+                Authorization: JSON.parse(localStorage.getItem('token')) 
+            } 
+        }
         try{
-        const res = await Axios.post('http://localhost:3001/forum/likes',{
+        const res = await Axios.post('http://localhost:3001/forum/likes', {
             userId : getStorage(),
             uploadId: props.uploadId4 
         }
@@ -53,7 +63,7 @@ function Likes (props) {
     return(
         <div >
             <div class='d-flex mt-2 justify-content-between position-relative'>
-                <button class='ms-2 postLikeBtn'  onClick={sendLike}><i class="far fa-heart postLikeBtn "></i></button>
+                <div class='ms-2 postLikeBtn d-flex align-items-center'  onClick={sendLike}><i class="far fa-heart postLikeBtn "></i></div>
                 <div class='p-2 likeNumber fw-bold' onMouseEnter={showNames} onMouseLeave={showNames}>{numberOfLikes()}</div>
                 <ListOfLikers uploadId11={props.uploadId4} likers ={likeNames}/>
             </div>

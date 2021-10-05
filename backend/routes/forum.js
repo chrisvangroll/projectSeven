@@ -2,13 +2,14 @@ const express = require('express');
 const router = express.Router();
 const forumCtrl = require('../controllers/forum');
 const multer = require('../middleware/multer-config');
+const auth = require('../middleware/auth')
 
 
 
 
   router.post('/', multer, forumCtrl.createPost);
 
-  router.get('/', forumCtrl.getAllPosts);
+  router.get('/', auth, forumCtrl.getAllPosts);
 
   router.get('/admin', forumCtrl.getAdmin);
 
