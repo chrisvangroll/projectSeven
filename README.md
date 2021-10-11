@@ -1,34 +1,27 @@
-# Foobar
+# Full Stack Social Media Site
 
-Foobar is a Python library for dealing with word pluralization.
+This is a full Stack social media site for a fictitious company Groupomania.  The request was for a site that colleagues could post, comment on, and like GIFs.  
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+1. Inside the backend directory run 'nodemon server'
+2. Inside the frontend directory run 'npm start'
+3. The site will open in the browser window on localhost3000
 
-```bash
-pip install foobar
-```
+## Built With
 
-## Usage
+* mySQL
+* Node.js
+* Express
+* React
+* HTML
+* CSS
+* SASS
+* Bootstrap 5
 
-```python
-import foobar
+## Acknowlegdments
+A huge thanks to my mentor, David Gallard for the counsel given during this project. 
 
-# returns 'words'
-foobar.pluralize('word')
+## Acknowlegdments
 
-# returns 'geese'
-foobar.pluralize('goose')
-
-# returns 'phenomenon'
-foobar.singularize('phenomena')
-```
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
+If you have suggestions or issues, please email me at [chrisvangroll@gmail.com]
